@@ -1,0 +1,35 @@
+<extentreports>
+    <configuration>
+        <reportName>Capstone Project Automation Test Report</reportName>
+        <documentTitle>Capstone Project Automation Test Report</documentTitle>
+        <theme>standard</theme>
+        <encoding>utf-8</encoding>
+        <protocol>https</protocol>
+        <appendExisting>true</appendExisting>
+
+        <!-- Chart Configurations -->
+        <chartVisibilityOnOpen>true</chartVisibilityOnOpen>
+        <testsViewChartLocation>top</testsViewChartLocation>
+        <dashboardViewChartLocation>top</dashboardViewChartLocation>
+
+        <!-- Display Filters -->
+        <enableCategoryView>true</enableCategoryView>
+        <enableAuthorView>true</enableAuthorView>
+        <enableDeviceView>false</enableDeviceView>
+
+        <!-- Custom CSS and JS -->
+        <styles>
+            <![CDATA[
+                .test { font-family: Arial, sans-serif; font-size: 14px; }
+                .category { background-color: #0f0f0f; color: white; }
+                .author { color: #007bff; }
+                .card-panel { background-color: #f7f7f9; }
+            ]]>
+        </styles>
+        <scripts>
+            <![CDATA[
+                console.log("ExtentReports Custom JS Loaded");
+            ]]>
+        </scripts>
+    </configuration>
+</extentreports>

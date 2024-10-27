@@ -1,0 +1,23 @@
+<configuration>
+
+  <!-- Define a File Appender -->
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>logs/testFile.log</file>
+    <append>true</append>
+    <immediateFlush>true</immediateFlush>
+    <encoder>
+      <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Set the root level to OFF to suppress general logs -->
+  <root level="OFF">
+    <appender-ref ref="FILE" />
+  </root>
+
+  <!-- Define logging specifically for your class or package -->
+  <logger name="com.infy.stepDefinitions" level="INFO" additivity="false">
+    <appender-ref ref="FILE" />
+  </logger>
+
+</configuration>
