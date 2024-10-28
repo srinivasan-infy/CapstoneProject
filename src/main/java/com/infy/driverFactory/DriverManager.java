@@ -1,12 +1,10 @@
 package com.infy.driverFactory;
 
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import org.openqa.selenium.WebDriver;
 
-import com.infy.base.BrowserType;
+import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,7 +27,7 @@ public class DriverManager {
         return instance;
     }
 
- // Initialize browser type from system properties or config file
+    // Initialize browser type from system properties or config file
     private void initializeBrowserType() {
         String browserFromTestNG = System.getProperty("browser");
         if (browserFromTestNG != null) {

@@ -6,46 +6,28 @@ import io.restassured.http.ContentType;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import java.util.Map;
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+//import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 
 
 public class APIUtility {
 
-	
-	public static Response getRequest(String url, ContentType contentType) {
-	    return given()
-	    		.relaxedHTTPSValidation()
-	    		.urlEncodingEnabled(false)
-	    		.contentType(contentType)
-	    	.when()
-	    		.log()
-	    		.all()
-	    		.get(url)
-	    	.then()
-	    		.log()
-	    		.all().extract().response();
-	  }
-	
-	public static Response getRequest(String url, Map<String, String> headers, ContentType contentType) {
-	    return given()
-	    		.relaxedHTTPSValidation()
-	    		.urlEncodingEnabled(false)
-	    		.headers(headers).contentType(contentType)
-	        .when()
-	        	.log()
-	        	.all()
-	        	.get(url)
-	        .then()
-	        	.log()
-	        	.all().extract().response();
-	  }
+	private static final Logger logger = LoggerFactory.getLogger(APIUtility.class);
 	
 	public static String sendGetRequestAndFetchKey(String baseUrl, String endpoint, String accountId, String key) {
 		// Build the URL dynamically by adding the accountID
 		String url = baseUrl + endpoint + accountId;
 		System.out.println(url);
 		// Send the GET request and get the response
-		Response response = given().header("Accept", "application/json") // Setting the Accept header to
-																			// application/json
+		Response response = given().header("Accept", "application/json") // Setting the Accept header to application/json
 				.header("Content-Type", "application/json") // Setting the Content-Type header to application/json
 				.when().get(url) // Sending the GET request to the dynamic URL
 				.then().statusCode(200) // Ensure the status code is 200
@@ -56,6 +38,59 @@ public class APIUtility {
 
 		return value; // Return the value of the specific key
 	}
+	
+	
+	// Method for sending GET requests
+    public JSONObject sendGetRequest(String endpoint, Map<String, String> headers) throws IOException, URISyntaxException {
+        HttpURLConnection connection = (HttpURLConnection) new URI(endpoint).toURL().openConnection();
+        connection.setRequestMethod("GET");
+
+        // Set headers if any
+        if (headers != null) {
+            for (Map.Entry<String, String> entry : headers.entrySet()) {
+                connection.setRequestProperty(entry.getKey(), entry.getValue());
+            }
+        }
+
+        return handleResponse(connection);
+    }
+
+    // Method for sending POST requests
+    public JSONObject sendPostRequest(String endpoint, JSONObject payload, Map<String, String> headers) throws IOException, URISyntaxException {
+        HttpURLConnection connection = (HttpURLConnection) new URI(endpoint).toURL().openConnection();
+        connection.setRequestMethod("POST");
+        connection.setDoOutput(true);
+        connection.setRequestProperty("Content-Type", "application/json");
+
+        // Set headers if any
+        if (headers != null) {
+            for (Map.Entry<String, String> entry : headers.entrySet()) {
+                connection.setRequestProperty(entry.getKey(), entry.getValue());
+            }
+        }
+
+        // Write payload
+        try (var os = connection.getOutputStream()) {
+            byte[] input = payload.toString().getBytes(StandardCharsets.UTF_8);
+            os.write(input, 0, input.length);
+        }
+
+        return handleResponse(connection);
+    }
+
+    // Common method to handle responses
+    private JSONObject handleResponse(HttpURLConnection connection) throws IOException {
+        int responseCode = connection.getResponseCode();
+        logger.info("Response Code: {}", responseCode);
+
+        try (InputStream inputStream = responseCode < 400 ? connection.getInputStream() : connection.getErrorStream()) {
+            String response = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+            return new JSONObject(response);
+        } finally {
+            connection.disconnect();
+        }
+    }
+	
 	
 	public static void sendPostRequestAndVerifyResponse(String baseUrl, String accountId, String amount) {
         // Build the URL for deposit
@@ -116,108 +151,4 @@ public class APIUtility {
     	        .then()
     	        	.log().all().extract().response();
     	  }
-    
-    public static Response postRequest(String url, String requestBody, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).body(requestBody).contentType(contentType)
-            .when().log().all().post(url).then().log().all().extract().response();
-      }
-    
-    public static Response postRequest(String url, Map<String, String> headers, String requestBody,
-    	      ContentType contentType) {
-    	    return given().relaxedHTTPSValidation().urlEncodingEnabled(false).headers(headers).body(requestBody)
-    	        .contentType(contentType).when().log().all().post(url).then().log().all().extract().response();
-    	  }
-    
-    public static Response postRequest(String baseURI, String endpoint, String requestBody, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).baseUri(baseURI).body(requestBody)
-            .contentType(contentType).when().log().all().post(endpoint).then().log().all().extract().response();
-      }
-    
-    public static Response postRequest(String baseURI, String endpoint, Map<String, String> headers, String requestBody,
-    	      ContentType contentType) {
-    	    return given().relaxedHTTPSValidation().urlEncodingEnabled(false).baseUri(baseURI).headers(headers)
-    	        .body(requestBody).contentType(contentType).when().log().all().post(endpoint).then().log().all()
-    	        .extract().response();
-    	  }
-    
-    public static Response putRequest(String url, String requestBody, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).body(requestBody).contentType(contentType)
-            .when().log().all().put(url).then().log().all().extract().response();
-      }
-    
-    public static Response putRequest(String url, Map<String, String> headers, String requestBody,
-    	      ContentType contentType) {
-    	    return given().relaxedHTTPSValidation().urlEncodingEnabled(false).headers(headers).body(requestBody)
-    	        .contentType(contentType).when().log().all().put(url).then().log().all().extract().response();
-    	  }
-    public static Response putRequest(String baseURI, String endpoint, String requestBody, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).baseUri(baseURI).body(requestBody)
-            .contentType(contentType).when().log().all().put(endpoint).then().log().all().extract().response();
-      }
-
-    public static Response putRequest(String baseURI, String endpoint, Map<String, String> headers, String requestBody,
-    	      ContentType contentType) {
-    	    return given().relaxedHTTPSValidation().urlEncodingEnabled(false).baseUri(baseURI).headers(headers)
-    	        .body(requestBody).contentType(contentType).when().log().all().put(endpoint).then().log().all()
-    	        .extract().response();
-    	  }
-    public static Response deleteRequest(String url, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).when().log().all().contentType(contentType)
-            .delete(url).then().log().all().extract().response();
-      }
-    
-    public static Response deleteRequest(String url, Map<String, String> headers, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).headers(headers).when().log().all()
-            .contentType(contentType).delete(url).then().log().all().extract().response();
-      }
-    
-    public static Response deleteRequest(String baseURI, String endpoint, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).baseUri(baseURI).contentType(contentType)
-            .when().log().all().delete(endpoint).then().log().all().extract().response();
-      }
-    
-    public static Response deleteRequest(String baseURI, String endpoint, Map<String, String> headers,
-    	      ContentType contentType) {
-    	    return given().relaxedHTTPSValidation().urlEncodingEnabled(false).baseUri(baseURI).headers(headers)
-    	        .contentType(contentType).when().log().all().delete(endpoint).then().log().all().extract().response();
-    	  }
-
-    public static Response patchRequest(String url, String requestBody, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).body(requestBody).contentType(contentType)
-            .when().log().all().patch(url).then().log().all().extract().response();
-      }
-    
-    public static Response patchRequest(String url, Map<String, String> headers, String requestBody,
-    	      ContentType contentType) {
-    	    return given().relaxedHTTPSValidation().urlEncodingEnabled(false).headers(headers).body(requestBody)
-    	        .contentType(contentType).when().log().all().patch(url).then().log().all().extract().response();
-    	  }
-    
-    public static Response patchRequest(String baseURI, String endpoint, String requestBody, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).baseUri(baseURI).body(requestBody)
-            .contentType(contentType).when().log().all().patch(endpoint).then().log().all().extract().response();
-      }
-    
-    public static Response patchRequest(String baseURI, String endpoint, Map<String, String> headers,
-    	      String requestBody, ContentType contentType) {
-    	    return given().relaxedHTTPSValidation().urlEncodingEnabled(false).baseUri(baseURI).headers(headers)
-    	        .body(requestBody).contentType(contentType).when().log().all().patch(endpoint).then().log().all()
-    	        .extract().response();
-    	  }
-    
-    public static Response headRequest(String url, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).contentType(contentType).when().log().all()
-            .head(url).then().log().all().extract().response();
-      }
-
-    public static Response headRequest(String url, Map<String, String> headers, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).headers(headers).contentType(contentType)
-            .when().log().all().head(url).then().log().all().extract().response();
-      }
-    
-    public static Response headRequest(String baseURI, String endpoint, ContentType contentType) {
-        return given().relaxedHTTPSValidation().urlEncodingEnabled(false).baseUri(baseURI).contentType(contentType)
-            .when().log().all().head(endpoint).then().log().all().extract().response();
-      }
-    
 }

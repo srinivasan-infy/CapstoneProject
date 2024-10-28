@@ -2,15 +2,9 @@ package com.infy.stepDefinitions;
 
 import com.infy.driverFactory.DriverManager;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeStep;
-import io.cucumber.java.Scenario;
+import io.cucumber.java.*;
 import io.cucumber.plugin.event.PickleStepTestStep;
-
 import com.aventstack.extentreports.ExtentTest;
-
 import org.openqa.selenium.WebDriver;
 import java.lang.reflect.Field;
 import java.util.List;
@@ -19,8 +13,11 @@ import io.cucumber.core.backend.TestCaseState;
 import io.cucumber.plugin.event.TestCase;
 import java.util.Properties;
 import com.infy.utility.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Hooks {
+	private static final Logger logger = LoggerFactory.getLogger(Hooks.class);
     private WebDriver driver;
     private ExtentTest test;
     private Properties config;
@@ -29,6 +26,7 @@ public class Hooks {
     @Before
     public void setUp(Scenario scenario) {
     	// Load config.properties using ConfigLoader
+    	ConfigLoaderUtility.setPropertiesFilePath("./src/main/resources/AutomationConfig.properties");
         config = ConfigLoaderUtility.loadProperties();
         driver = DriverManager.getInstance().getDriver();
         //ExtentReportSetup.createTest(scenario.getName());
@@ -37,7 +35,6 @@ public class Hooks {
         String testType = scenario.getSourceTagNames().stream()
                 .findFirst()
                 .orElse("General");
-
         String author = "Srinivasan"; 
         ExtentReportSetup.createTest(testName, testType, author);
     }
@@ -74,10 +71,10 @@ public class Hooks {
             TestCase testCase = (TestCase) f1.get(sc);
 
             List<PickleStepTestStep> testSteps = testCase.getTestSteps().stream()
-                .filter(x -> x instanceof PickleStepTestStep)
-                .map(x -> (PickleStepTestStep) x)
-                .collect(Collectors.toList());
-            System.out.println("Count "+ count);
+                    .filter(x -> x instanceof PickleStepTestStep)
+                    .map(x -> (PickleStepTestStep) x)
+                    .collect(Collectors.toList());
+
             if (count < testSteps.size()) {
                 PickleStepTestStep currentStep = testSteps.get(count);
                 return currentStep.getStep().getText();
@@ -85,8 +82,8 @@ public class Hooks {
                 return "Unknown Step";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Error retrieving step name", e);
             return "Error retrieving step name";
         }
-    }    
+    } 
 }

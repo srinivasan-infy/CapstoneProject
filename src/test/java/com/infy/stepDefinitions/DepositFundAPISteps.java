@@ -4,6 +4,7 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 import com.infy.cucumberObjects.*;
 import com.infy.driverFactory.DriverManager;
+import com.infy.pageObjects.BaseStep;
 import com.infy.utility.*;
 import io.cucumber.java.en.Then;
 import org.slf4j.Logger;
@@ -15,19 +16,24 @@ public class DepositFundAPISteps extends BaseStep {
     private static final Logger logger = LoggerFactory.getLogger(DepositFundAPISteps.class);
     private TestContext testContext;
     public String accountID, custID;
-    public String baseUrl = ConfigLoaderUtility.getProperty("baseURL");
+	private final String baseUrl;
     public String[] balanceData, afterDepositBalanceData;
     private static final String ACCOUNT_API_PATH = "/services/bank/accounts/";
     private static final String CUSTOMER_ID_KEY = "customerId";
 
     public DepositFundAPISteps() {
         this.driver = DriverManager.getInstance().getDriver();
+     // Retrieve the base URL, providing a default if not found
+        baseUrl = ConfigLoaderUtility.getProperty("baseURL").orElse("https://parabank.parasoft.com/parabank"); 
         initializeObjects();
-    }
+        
+    } 
 
     public DepositFundAPISteps(TestContext context) {
         this.testContext = context;
         this.driver = DriverManager.getInstance().getDriver();
+     // Retrieve the base URL, providing a default if not found
+        baseUrl = ConfigLoaderUtility.getProperty("baseURL").orElse("https://parabank.parasoft.com/parabank"); 
         initializeObjects();
     }
 

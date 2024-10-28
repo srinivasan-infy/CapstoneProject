@@ -19,7 +19,5 @@ public class TestContext {
 
     public void setBalanceAmount(String[] balanceAmount) {
         this.balAmount = balanceAmount[0];
-    }
-    
-    
+    }  
 }

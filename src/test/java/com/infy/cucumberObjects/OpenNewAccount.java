@@ -127,6 +127,5 @@ public class OpenNewAccount {
 	public String getNewAccountNumber() {
 		return newAccountID.getText();
 	}	
-	
 
 }

@@ -9,45 +9,37 @@ import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import com.infy.cucumberObjects.*;
 import com.infy.driverFactory.DriverManager;
-import java.time.Duration;
-import java.util.Map;
 
+import java.util.Map;
 import static org.testng.Assert.*;
 import com.infy.utility.ExcelUtility;
 import com.infy.utility.ExtendReportScreenShot;
 import com.infy.utility.StepDefinitionUtility;
 
-public class OpenNewAccountStep extends BaseStep {
+public class OpenNewAccountStep {
 	private static final Logger logger = LoggerFactory.getLogger(OpenNewAccountStep.class);
-	private WebDriver driver;
 	private String newAccountNumber;
 	private String deductedFromAccount;
 	private double minimumDeposit;
 	private WebDriverWait wait;
 
-	@Then("User fetch the account data into excel")
-	public void user_fetch_the_account_data_into_excel() {
-		try {
-			logger.info("Fetching account data into Excel");
-			Map<String, String[]> accountData = accountOverview.fetchWebTableData();
-
-			if (accountData.isEmpty()) {
-				logger.warn("No data found in the web table.");
-				ExtendReportScreenShot.logScreenshotInfoEachStep(driver, "No data found in the web table");
-				return;
-			} else {
-				logger.info("Data fetched from web table: {} rows.", accountData.size());
-			}
-
-			ExcelUtility.writeDataToExcel(accountData, "AccountData.xlsx");
-			logger.info("Data written to Excel file");
-			ExtendReportScreenShot.logScreenshotInfoEachStep(driver, "Step passed: Fetched account data into Excel");
-		} catch (Exception e) {
-			ExtendReportScreenShot.logScreenshotInfoEachStep(driver, "Step failed: Fetching account data into Excel");
-			logger.error("Error fetching account data: {}", e.getMessage());
-			Assert.fail("Failed to fetch account data", e);
-		}
-	}
+	private WebDriver driver;
+    private AccountOverview accountOverview;
+    private OpenNewAccount openNewAccount;
+    private AccountServices accountServices;
+  
+    public OpenNewAccountStep() {
+        this.driver = DriverManager.getInstance().getDriver();
+        initializeObjects();
+    }
+    
+    private void initializeObjects() {
+    	accountOverview = new AccountOverview(driver);
+        openNewAccount = new OpenNewAccount(driver);
+        accountServices = new AccountServices(driver);
+    }	
+	
+	
 
 	@Then("User select the account type {string}")
 	public void user_select_the_account_type(String accountType) {
@@ -100,8 +92,7 @@ public class OpenNewAccountStep extends BaseStep {
 	@Then("User verify account opened status")
 	public void user_verify_account_opened_status() {
 		try {
-			wait.until(
-					ExpectedConditions.textToBePresentInElement(openNewAccount.getAccountOpened(), "Account Opened!"));
+			wait.until(ExpectedConditions.textToBePresentInElement(openNewAccount.getAccountOpened(), "Account Opened!"));
 
 			assertTrue(openNewAccount.isAccountOpened(), "Account was not opened.");
 			assertTrue(openNewAccount.isSuccessMessage(), "Success message not displayed.");
@@ -124,7 +115,7 @@ public class OpenNewAccountStep extends BaseStep {
 		try {
 			accountServices.clickAccountOverview();
 			logger.info("Navigating to Account Overview");
-			wait.until(ExpectedConditions.visibilityOfAllElements(accountOverview.getAccountTableBody()));
+			//wait.until(ExpectedConditions.visibilityOfAllElements(accountOverview.getAccountTableBody()));
 			ExtendReportScreenShot.logScreenshotInfoEachStep(driver, "Step passed: Clicked on Account Overview link");
 		} catch (Exception e) {
 			ExtendReportScreenShot.logScreenshotInfoEachStep(driver, "Step failed: Clicking Account Overview link");

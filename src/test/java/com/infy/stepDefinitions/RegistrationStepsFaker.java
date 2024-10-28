@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import com.infy.cucumberObjects.*;
 import com.infy.driverFactory.DriverManager;
 import com.infy.models.User;
+import com.infy.utility.ConfigLoaderUtility;
 import com.infy.utility.ExtendReportScreenShot;
 import com.infy.utility.StepDefinitionUtility;
 import io.cucumber.java.en.*;
@@ -17,23 +18,34 @@ import org.testng.Assert;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class RegistrationStepsFaker extends BaseStep {
+public class RegistrationStepsFaker {
 	private static final Logger logger = LoggerFactory.getLogger(RegistrationStepsFaker.class);
     private WebDriver driver;
+    private RegistrationPage registrationPage;
+    private LoginPage loginPage;
+    private Logout logout;
+    private final String baseUrl;
     private Faker faker;
     public User user;
 
     public RegistrationStepsFaker() {
 		this.driver = DriverManager.getInstance().getDriver();
         faker = new Faker(); // Initialize Faker
+        baseUrl = ConfigLoaderUtility.getProperty("baseURL").orElse("https://parabank.parasoft.com/parabank");
 		logger.info("Initialized RegistrationSteps with WebDriver instance");
+		initializeObjects();
 	}
    
+    private void initializeObjects() {
+    	registrationPage = new RegistrationPage(driver);
+    	loginPage = new LoginPage(driver);
+    	logout = new Logout(driver);
+    }    
+    
     @Given("User is on the registration pages")
     public void user_is_on_the_registration_pages() {
-        String url = "https://parabank.parasoft.com/parabank/index.htm";
-        DriverManager.getInstance().getDriver().get(url);
-        logger.info("Navigated to registration page: {}", url);
+        driver.get(baseUrl);
+        logger.info("Navigated to registration page: {}", baseUrl);
         ExtendReportScreenShot.logScreenshotInfoEachStep(driver, "Navigated to registration page");
     }
 

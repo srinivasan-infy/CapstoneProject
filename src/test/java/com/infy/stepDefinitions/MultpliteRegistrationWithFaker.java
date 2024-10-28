@@ -20,17 +20,27 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MultpliteRegistrationWithFaker extends BaseStep {
+public class MultpliteRegistrationWithFaker {
 	private static final Logger logger = LoggerFactory.getLogger(RegistrationStepsFaker.class);
-
+	private WebDriver driver;
+    private RegistrationPage registrationPage;
+    private LoginPage loginPage;
+    private AccountServices accountServices;
 	public Faker faker;
 	private Map<String, User> registeredUsers;
 	
 	public MultpliteRegistrationWithFaker() {
+		this.driver = DriverManager.getInstance().getDriver();
 		this.faker = new Faker();
 		this.registeredUsers = new HashMap<>();
+		initializeObjects();
 	}
-
+     
+    private void initializeObjects() {
+    	registrationPage = new RegistrationPage(driver);
+    	loginPage = new LoginPage(driver);
+    	accountServices = new AccountServices(driver);
+    }
 
 	@When("User fills in the registration form with random data for {int} users")
     public void user_fills_in_the_registration_form_with_random_data(int numberOfUsers) {

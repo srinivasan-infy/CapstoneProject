@@ -1,11 +1,7 @@
 package com.infy.stepDefinitions;
 
-import com.infy.cucumberObjects.AccountOverview;
-import com.infy.cucumberObjects.AccountServices;
-import com.infy.cucumberObjects.BaseStep;
 import com.infy.cucumberObjects.LoginPage;
 import com.infy.cucumberObjects.Logout;
-import com.infy.cucumberObjects.OpenNewAccount;
 import com.infy.cucumberObjects.RegistrationPage;
 import com.infy.driverFactory.DriverManager;
 import com.infy.utility.ConfigLoaderUtility;
@@ -20,12 +16,32 @@ import org.testng.Assert;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
-public class RegistrationSteps extends BaseStep {
+public class RegistrationSteps {
 	private static final Logger logger = LoggerFactory.getLogger(RegistrationSteps.class);
 	private WebDriver driver;
-	public String baseUrl = ConfigLoaderUtility.getProperty("baseURL");
+	private final String baseUrl;
+    private RegistrationPage registrationPage;
+    private LoginPage loginPage;
+    private Logout logout;
+	
+	public RegistrationSteps() {
+        // Load the base URL from properties
+        this.driver = DriverManager.getInstance().getDriver(); // Initialize the driver from the singleton
 
+        // Retrieve the base URL, providing a default if not found
+        baseUrl = ConfigLoaderUtility.getProperty("baseURL").orElse("https://parabank.parasoft.com/parabank"); 
+        initializeObjects();
+    }
+    
+    private void initializeObjects() {
+    	registrationPage = new RegistrationPage(driver);
+    	loginPage = new LoginPage(driver);
+    	logout = new Logout(driver);
+    }
+	
+	
 	@Given("User is on home page")
     public void user_is_on_home_page() {
         DriverManager.getInstance().getDriver().get(baseUrl);

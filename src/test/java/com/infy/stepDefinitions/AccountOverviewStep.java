@@ -1,17 +1,32 @@
 package com.infy.stepDefinitions;
 
 import io.cucumber.java.en.*;
+
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import com.infy.cucumberObjects.*;
 import com.infy.driverFactory.DriverManager;
+import com.infy.utility.ExcelUtility;
 import com.infy.utility.ExtendReportScreenShot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class AccountOverviewStep extends BaseStep {
+public class AccountOverviewStep {
     // Logger for this class
     private static final Logger logger = LoggerFactory.getLogger(AccountOverviewStep.class);
+    private WebDriver driver;
+    private AccountOverview accountOverview;
+  
+    public AccountOverviewStep() {
+        this.driver = DriverManager.getInstance().getDriver();
+        initializeObjects();
+    }
+    
+    private void initializeObjects() {
+        accountOverview = new AccountOverview(driver);
+    }
     
     @Then("User clicks on the Open New Account link")
     public void user_clicks_on_the_open_new_account_link() {
@@ -96,4 +111,28 @@ public class AccountOverviewStep extends BaseStep {
             Assert.fail("Total balance verification failed", e);
         }
     }
+    
+    @Then("User fetch the account data into excel")
+	public void user_fetch_the_account_data_into_excel() {
+		try {
+			logger.info("Fetching account data into Excel");
+			Map<String, String[]> accountData = accountOverview.fetchWebTableData();
+
+			if (accountData.isEmpty()) {
+				logger.warn("No data found in the web table.");
+				ExtendReportScreenShot.logScreenshotInfoEachStep(driver, "No data found in the web table");
+				return;
+			} else {
+				logger.info("Data fetched from web table: {} rows.", accountData.size());
+			}
+
+			ExcelUtility.writeDataToExcel(accountData, "AccountData.xlsx");
+			logger.info("Data written to Excel file");
+			ExtendReportScreenShot.logScreenshotInfoEachStep(driver, "Step passed: Fetched account data into Excel");
+		} catch (Exception e) {
+			ExtendReportScreenShot.logScreenshotInfoEachStep(driver, "Step failed: Fetching account data into Excel");
+			logger.error("Error fetching account data: {}", e.getMessage());
+			Assert.fail("Failed to fetch account data", e);
+		}
+	}
 }

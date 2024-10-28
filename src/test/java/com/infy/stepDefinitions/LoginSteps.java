@@ -11,9 +11,23 @@ import org.testng.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LoginSteps extends BaseStep {
+public class LoginSteps {
     private static final Logger logger = LoggerFactory.getLogger(LoginSteps.class);
    
+    private WebDriver driver;
+    private LoginPage loginPage;
+    private Logout logout;
+  
+    public LoginSteps() {
+        this.driver = DriverManager.getInstance().getDriver();
+        initializeObjects();
+    }
+    
+    private void initializeObjects() {
+        loginPage = new LoginPage(driver);
+        logout = new Logout(driver);
+    }
+    
     @Given("User is in the login page")
     public void user_is_in_the_login_page() {
     	logger.info("Navigating to login page");
