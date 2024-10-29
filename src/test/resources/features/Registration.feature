@@ -1,5 +1,5 @@
 Feature: User Registration Process with Valid and Invalid Scenario7
-# to test the jenkins polling
+# to test the jenkins pol
 
   Scenario: Register multiple users from Excel
     Given User is on home page
