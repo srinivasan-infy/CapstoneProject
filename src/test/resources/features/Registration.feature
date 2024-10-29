@@ -1,4 +1,5 @@
-Feature: User Registration Process with Valid and Invalid Scenario
+Feature: User Registration Process with Valid and Invalid Scenario7
+# to test the jenkins
 
   Scenario: Register multiple users from Excel
     Given User is on home page
