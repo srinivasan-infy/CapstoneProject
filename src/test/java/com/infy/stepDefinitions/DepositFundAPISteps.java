@@ -4,16 +4,17 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 import com.infy.cucumberObjects.*;
 import com.infy.driverFactory.DriverManager;
-import com.infy.pageObjects.BaseStep;
 import com.infy.utility.*;
 import io.cucumber.java.en.Then;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
-public class DepositFundAPISteps extends BaseStep {
+public class DepositFundAPISteps{
     // Logger for this class
     private static final Logger logger = LoggerFactory.getLogger(DepositFundAPISteps.class);
+    private WebDriver driver;
+    private AccountOverview accountOverview;
     private TestContext testContext;
     public String accountID, custID;
 	private final String baseUrl;
@@ -37,6 +38,10 @@ public class DepositFundAPISteps extends BaseStep {
         initializeObjects();
     }
 
+    private void initializeObjects() {
+        accountOverview = new AccountOverview(driver);
+    }
+    
     @Then("User gets the account id from the Account Overview")
     public void user_gets_the_account_id_from_the_account_overview() {
         try {

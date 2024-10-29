@@ -11,14 +11,14 @@ import com.infy.utility.ExtentReportSetup;
 
 @CucumberOptions(
      features = "src/test/resources/features",
-     glue = {"com.infy.stepDefinitions","com.infy.base"},
+     glue = {"com.infy.stepDefinitions"},
      plugin = {"pretty", "html:target/cucumber-html-report"}
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 	
 	@Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = false)
     public Object[][] scenarios() {
         return super.scenarios();
     }
