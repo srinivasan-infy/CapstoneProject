@@ -3,6 +3,9 @@ package com.infy.stepDefinitions;
 import com.github.javafaker.Faker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.infy.cucumberObjects.*;
 import com.infy.driverFactory.DriverManager;
 import com.infy.models.User;
@@ -15,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -23,7 +27,6 @@ public class RegistrationStepsFaker {
     private WebDriver driver;
     private RegistrationPage registrationPage;
     private LoginPage loginPage;
-    private Logout logout;
     private final String baseUrl;
     private Faker faker;
     public User user;
@@ -39,7 +42,6 @@ public class RegistrationStepsFaker {
     private void initializeObjects() {
     	registrationPage = new RegistrationPage(driver);
     	loginPage = new LoginPage(driver);
-    	logout = new Logout(driver);
     }    
     
     @Given("User is on the registration pages")
@@ -75,7 +77,7 @@ public class RegistrationStepsFaker {
             ExtendReportScreenShot.logScreenshotInfoEachStep(driver, "Step passed: Filling out the registration form");
 
             // Save registration data to JSON file
-            String jsonFilePath = "target/registration_data.json"; 
+            String jsonFilePath = "target/registration_data_" + user.getUsername() + ".json";
             StepDefinitionUtility.saveRegistrationData(user, jsonFilePath);
             logger.info("User registration data saved to JSON file: {}", jsonFilePath);
         } catch (Exception e) {
@@ -100,9 +102,15 @@ public class RegistrationStepsFaker {
 
     @Then("save registration data to JSON")
     public void save_registration_data_to_json() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try (FileWriter writer = new FileWriter("target/registration_data.json")) {
-            gson.toJson(user, writer);
+    	Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonArray registrationDataArray = new JsonArray();
+        String jsonFilePath = "target/registration_data_" + user.getUsername() + ".json";
+        // Add new registration data
+        registrationDataArray.add(gson.toJsonTree(user));
+
+        // Write the updated data back to the JSON file
+        try (FileWriter writer = new FileWriter(jsonFilePath)) {
+            gson.toJson(registrationDataArray, writer); // Write the entire array
             logger.info("Registration data saved to target/registration_data.json");
         } catch (IOException e) {
             logger.error("Failed to save registration data to JSON", e);

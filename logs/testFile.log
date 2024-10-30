@@ -1,80 +1,41 @@
-8077 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Navigated to home page: https://parabank.parasoft.com/parabank
-9261 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Verified registration page title: Expected: Signing up is easy!, Actual: Signing up is easy!
-10942 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Read user registration data from file: ./DataSheet/RegistrationData.xlsx
-45072 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Updated Excel file after processing all users
-49070 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Navigated to home page: https://parabank.parasoft.com/parabank
-51708 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Verified registration page title: Expected: Signing up is easy!, Actual: Signing up is easy!
-51927 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Read user registration data from file: ./DataSheet/RegistrationData.xlsx
-85246 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Updated Excel file after processing all users
-3639 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
-4838 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
-8443 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
-9326 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
-9514 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
-9895 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
-11486 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
-13085 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
-18327 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
-19104 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
-19297 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
-19666 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
-4051 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
-7353 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
-9496 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
-10250 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
-10306 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
-10419 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
-13190 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
-15639 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
-17097 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
-17625 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
-17674 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
-17764 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
-2105 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
-5713 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
-8725 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
-10265 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
-10418 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
-10726 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
-12097 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
-14085 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
-16206 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
-16912 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
-17023 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
-17200 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
-6420 [main] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
-9006 [main] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
-2202 [main] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
-5171 [main] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
-7823 [main] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
-8795 [main] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
-8957 [main] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
-9218 [main] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
-2090 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
-6004 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
-9215 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
-10252 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
-10397 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
-10710 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
-2151 [TestNG-test-Test-1] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
-6424 [TestNG-test-Test-1] INFO  c.infy.stepDefinitions.LoginSteps - Entering valid credentials: username=testing11, password=testing123
-6729 [TestNG-test-Test-1] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
-8832 [TestNG-test-Test-1] INFO  c.i.s.AccountOverviewStep - Verifying if the Account Overview page is displayed: true
-9761 [TestNG-test-Test-1] INFO  c.i.s.DepositFundAPISteps - Fetching account data from the web table.
-9968 [TestNG-test-Test-1] INFO  c.i.s.DepositFundAPISteps - Data fetched from web table: 2 rows.
-15820 [TestNG-test-Test-1] INFO  c.i.s.DepositFundAPISteps - Customer ID fetched: 12767
-15996 [TestNG-test-Test-1] INFO  c.i.s.DepositFundAPISteps - Depositing $10000.00 for account: 14343
-18357 [TestNG-test-Test-1] INFO  c.i.s.OpenNewAccountStep - Navigating to Account Overview
-18631 [TestNG-test-Test-1] INFO  c.i.s.DepositFundAPISteps - Fetching account data from the web table.
-18651 [TestNG-test-Test-1] WARN  c.i.s.DepositFundAPISteps - No data found in the web table after deposit.
-2257 [main] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
-6401 [main] INFO  c.infy.stepDefinitions.LoginSteps - Entering valid credentials: username=testing11, password=testing123
-6735 [main] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
-8607 [main] INFO  c.i.s.AccountOverviewStep - Verifying if the Account Overview page is displayed: true
-8931 [main] INFO  c.i.s.DepositFundAPISteps - Fetching account data from the web table.
-9014 [main] INFO  c.i.s.DepositFundAPISteps - Data fetched from web table: 2 rows.
-14956 [main] INFO  c.i.s.DepositFundAPISteps - Customer ID fetched: 12767
-15188 [main] INFO  c.i.s.DepositFundAPISteps - Depositing $10000.00 for account: 14343
-17346 [main] INFO  c.i.s.OpenNewAccountStep - Navigating to Account Overview
-17593 [main] INFO  c.i.s.DepositFundAPISteps - Fetching account data from the web table.
-17606 [main] WARN  c.i.s.DepositFundAPISteps - No data found in the web table after deposit.
+2502 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+4575 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+7498 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
+8252 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+8362 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
+8563 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+2564 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+4493 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+7429 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
+8087 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+8197 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
+8427 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+2627 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+4580 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+7533 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
+8484 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+8596 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
+8828 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+2518 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+4439 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+7442 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
+8199 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+8310 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
+8529 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+2530 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+4966 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+8072 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
+8805 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+8912 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
+9138 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+2529 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+5779 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+8818 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data.json
+9467 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+9576 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Registration data saved to target/registration_data.json
+9803 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+3039 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+5196 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+8244 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Toney_Crona.json
+8908 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+9122 [TestNG-test-Test-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
