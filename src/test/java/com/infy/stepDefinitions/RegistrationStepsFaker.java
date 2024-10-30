@@ -4,8 +4,6 @@ import com.github.javafaker.Faker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import com.infy.cucumberObjects.*;
 import com.infy.driverFactory.DriverManager;
 import com.infy.models.User;
@@ -17,8 +15,6 @@ import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
