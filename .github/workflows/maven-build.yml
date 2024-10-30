@@ -1,4 +1,4 @@
-name: Maven Build
+name: Maven Build and Test
 
 on:
   push:
@@ -24,3 +24,6 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
+
+        - name: Run tests with Maven
+        run: mvn test  # This line runs the test goal
