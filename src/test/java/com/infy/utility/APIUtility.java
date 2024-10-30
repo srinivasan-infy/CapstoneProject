@@ -33,10 +33,13 @@ public class APIUtility {
 				.then().statusCode(200) // Ensure the status code is 200
 				.extract().response(); // Extract the response
 
-		// Fetch the data for the specific key from the JSON response
-		String value = response.jsonPath().getString(key);
+	    System.out.println("Response: ");
+	    response.prettyPrint();
 
-		return value; // Return the value of the specific key
+	    // Fetch the data for the specific key from the JSON response
+	    String value = response.jsonPath().getString(key);
+	    return value; 
+	    
 	}
 	
 	

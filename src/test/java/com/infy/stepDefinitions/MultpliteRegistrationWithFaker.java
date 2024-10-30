@@ -3,6 +3,7 @@ package com.infy.stepDefinitions;
 import com.github.javafaker.Faker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import com.infy.cucumberObjects.*;
 import com.infy.driverFactory.DriverManager;
 import com.infy.models.User;
@@ -89,7 +90,7 @@ public class MultpliteRegistrationWithFaker {
 
 	@Then("save all successfully registered users data to a single JSON file")
     public void save_all_successfully_registered_users_data_to_json() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("target/all_successful_registration_data.json")) {
             gson.toJson(registeredUsers, writer);
             logger.info("All successfully registered user data saved to target/all_successful_registration_data.json");
