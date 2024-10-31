@@ -23,7 +23,8 @@ public class ChromeDriverCreator {
             options.addArguments("disable-notifications");
             options.addArguments("disable-extensions");
             options.addArguments("disable-popup-blocking");
-
+            options.addArguments("--headless");  // Run in headless mode
+            options.addArguments("--window-size=1920x1080");  // Set window size for headless
             // Disable password manager
             options.addArguments("disable-features=PasswordManager");
 
