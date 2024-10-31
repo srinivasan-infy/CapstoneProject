@@ -18,7 +18,14 @@ public class ChromeDriverCreator {
 
             // Set ChromeOptions for the driver
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--start-maximized"); // Start maximized
+            options.addArguments("--start-maximized"); 
+            options.addArguments("disable-infobars");
+            options.addArguments("disable-notifications");
+            options.addArguments("disable-extensions");
+            options.addArguments("disable-popup-blocking");
+
+            // Disable password manager
+            options.addArguments("disable-features=PasswordManager");
 
             // Create and return the ChromeDriver instance
             WebDriver driver = new ChromeDriver(options);
