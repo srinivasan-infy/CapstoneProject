@@ -19,6 +19,10 @@ public class FirefoxDriverCreator {
             // Set FirefoxOptions for the driver
             FirefoxOptions options = new FirefoxOptions();
             // Add any desired options here
+            options.addPreference("signon.rememberSignons", false);
+            options.addPreference("signon.autofillForms", false);
+            options.addPreference("signon.autofillForms.http", false);
+            
             options.addArguments("--start-maximized"); // Example option
 
             // Create and return the FirefoxDriver instance
