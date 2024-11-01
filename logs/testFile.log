@@ -1,12 +1,24 @@
-1183 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: true
-1517 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
-1521 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - Running Chrome in headless mode.
-1522 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless, --disable-gpu, --window-size=1920,1080, --start-maximized, disable-features=PasswordMa...], extensions: []}}
-3754 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
-3754 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
-3776 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
-8029 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
-10693 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Cary_Gutmann.json
-11475 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
-11740 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
-12417 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
+1136 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: true
+1509 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver has been set up successfully.
+1513 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - Running Firefox in headless mode.
+1513 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxOptions set: Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [-headless, --width=1920, --height=1080], prefs: {signon.autofillForms: false, signon.autofillForms.http: false, signon.rememberSignons: false}}}
+2978 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver instance created successfully.
+2978 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: FIREFOX
+2999 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+5683 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+7046 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Monroe_Walsh.json
+7588 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+7687 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+8313 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser FIREFOX has been quit
+1119 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: true
+1425 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver has been set up successfully.
+1432 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - Running Firefox in headless mode.
+1432 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxOptions set: Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [-headless, --width=1920, --height=1080], prefs: {signon.autofillForms: false, signon.autofillForms.http: false, signon.rememberSignons: false}}}
+2832 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver instance created successfully.
+2832 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: FIREFOX
+2850 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+6351 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+7747 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Gilberto_Davis.json
+8364 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+8471 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+9074 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser FIREFOX has been quit

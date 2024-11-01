@@ -9,8 +9,14 @@ import org.slf4j.LoggerFactory;
 
 public class EdgeDriverCreator {
     private static final Logger logger = LoggerFactory.getLogger(EdgeDriverCreator.class);
+    private final String browser;
 
-    public WebDriver create() {
+    // Constructor that accepts the browser type
+    public EdgeDriverCreator(String browser) {
+        this.browser = browser;
+    }
+
+    public WebDriver create(boolean headless) {
         try {
             // Set up the EdgeDriver using WebDriverManager
             WebDriverManager.edgedriver().setup();
@@ -18,7 +24,9 @@ public class EdgeDriverCreator {
 
             // Set EdgeOptions for the driver
             EdgeOptions options = new EdgeOptions();
-            // Add any desired options here
+            if (headless) {
+                options.addArguments("--headless");
+            }
             options.addArguments("--start-maximized"); // Example option
 
             // Create and return the EdgeDriver instance

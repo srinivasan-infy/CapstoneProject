@@ -10,6 +10,13 @@ import org.slf4j.LoggerFactory;
 public class ChromeDriverCreator {
 	private static final Logger logger = LoggerFactory.getLogger(ChromeDriverCreator.class);
 
+	private final String browser;
+
+    // Constructor that accepts the browser type
+    public ChromeDriverCreator(String browser) {
+        this.browser = browser;
+    }
+
     public WebDriver create(boolean headless) {
         try {
             // Set up the ChromeDriver using WebDriverManager
@@ -36,7 +43,7 @@ public class ChromeDriverCreator {
 
         } catch (Exception e) {
             logger.error("Failed to create ChromeDriver: {}", e.getMessage());
-            throw new ChromeDriverCreationException("Could not initialize ChromeDriver", e);
+            throw new WebDriverCreationException(browser, "Could not initialize ChromeDriver", e);
         }
     }
     

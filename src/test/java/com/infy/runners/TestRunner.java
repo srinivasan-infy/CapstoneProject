@@ -10,10 +10,10 @@ import io.cucumber.testng.CucumberOptions;
 import com.infy.utility.ExtentReportSetup;
 
 @CucumberOptions(
-     features = "src/test/resources/features",
-     glue = {"com.infy.stepDefinitions"},
-     plugin = {"pretty", "html:target/cucumber-html-report"}
-)
+	    features = "src/test/resources/features",
+	    glue = {"com.infy.stepDefinitions"},
+	    plugin = {"pretty", "html:target/cucumber-html-report","json:target/cucumber.json"}
+	)
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 	

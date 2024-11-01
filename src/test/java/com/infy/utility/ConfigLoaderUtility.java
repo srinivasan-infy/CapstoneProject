@@ -21,8 +21,8 @@ public class ConfigLoaderUtility {
     // Load the properties from the specified properties file
     public static Properties loadProperties() {
         if (properties == null) {
-            synchronized (lock) { // Ensure thread safety
-                if (properties == null) { // Double-check locking
+            synchronized (lock) { 
+                if (properties == null) { 
                     properties = new Properties();
                     try (FileInputStream input = new FileInputStream(propertiesFilePath)) {
                         properties.load(input);

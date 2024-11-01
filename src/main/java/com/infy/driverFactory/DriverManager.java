@@ -72,11 +72,11 @@ public class DriverManager {
     	boolean isHeadless = getBrowserOptions();
         switch (browserType) {
             case CHROME:
-            	return new ChromeDriverCreator().create(isHeadless);
+            	return new ChromeDriverCreator("CHROME").create(isHeadless);
             case FIREFOX:
-                return new FirefoxDriverCreator().create();
+                return new FirefoxDriverCreator("FIREFOX").create(isHeadless);
             case EDGE:
-                return new EdgeDriverCreator().create();
+                return new EdgeDriverCreator("EDGE").create(isHeadless);
             default:
                 throw new UnsupportedOperationException("Unsupported browser type: " + browserType);
         }
