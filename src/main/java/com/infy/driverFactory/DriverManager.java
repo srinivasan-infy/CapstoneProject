@@ -37,8 +37,6 @@ public class DriverManager {
         }
         return props;
     }
-
-    
     
     // Initialize browser type from system properties or config file
     private void initializeBrowserType() {
@@ -95,7 +93,7 @@ public class DriverManager {
     }
     
     private boolean getBrowserOptions() {
-    	boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless"));
+    	boolean isHeadless = Boolean.parseBoolean(properties.getProperty("headless"));
         logger.info("Headless mode is set to: {}", isHeadless);
         return isHeadless;
     }
