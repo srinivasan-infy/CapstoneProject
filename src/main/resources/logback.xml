@@ -16,6 +16,22 @@
   </root>
 
   <!-- Define logging specifically for your class or package -->
+  <logger name="com.infy.driverFactory" level="INFO" additivity="false">
+    <appender-ref ref="FILE" />
+  </logger>
+
+  <!-- Define logging specifically for your class or package -->
+  <logger name="com.infy.utility" level="INFO" additivity="false">
+    <appender-ref ref="FILE" />
+  </logger>
+  
+    <!-- Define logging specifically for your class or package -->
+  <logger name="com.infy.cucumberObjects" level="INFO" additivity="false">
+    <appender-ref ref="FILE" />
+  </logger>
+
+
+  <!-- Define logging specifically for your class or package -->
   <logger name="com.infy.stepDefinitions" level="INFO" additivity="false">
     <appender-ref ref="FILE" />
   </logger>

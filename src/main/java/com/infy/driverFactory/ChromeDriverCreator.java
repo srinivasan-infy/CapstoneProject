@@ -8,9 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ChromeDriverCreator {
-    private static final Logger logger = LoggerFactory.getLogger(ChromeDriverCreator.class);
+	private static final Logger logger = LoggerFactory.getLogger(ChromeDriverCreator.class);
 
-    public WebDriver create() {
+    public WebDriver create(boolean headless) {
         try {
             // Set up the ChromeDriver using WebDriverManager
             WebDriverManager.chromedriver().setup();
@@ -18,9 +18,16 @@ public class ChromeDriverCreator {
 
             // Set ChromeOptions for the driver
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--start-maximized"); 
-            // Disable password manager
+            if (headless) {
+                options.addArguments("--headless");
+                options.addArguments("--disable-gpu"); // Disable GPU hardware acceleration
+                options.addArguments("--window-size=1920,1080"); // Set window size
+                logger.info("Running Chrome in headless mode.");
+            }
+            options.addArguments("--start-maximized");
             options.addArguments("disable-features=PasswordManager");
+
+            logger.info("ChromeOptions set: {}", options);
 
             // Create and return the ChromeDriver instance
             WebDriver driver = new ChromeDriver(options);
@@ -29,7 +36,8 @@ public class ChromeDriverCreator {
 
         } catch (Exception e) {
             logger.error("Failed to create ChromeDriver: {}", e.getMessage());
-            throw new RuntimeException("Could not initialize ChromeDriver", e);
+            throw new ChromeDriverCreationException("Could not initialize ChromeDriver", e);
         }
     }
+    
 }
