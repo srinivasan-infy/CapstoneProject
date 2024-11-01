@@ -9,8 +9,14 @@ import org.slf4j.LoggerFactory;
 
 public class FirefoxDriverCreator {
     private static final Logger logger = LoggerFactory.getLogger(FirefoxDriverCreator.class);
+    private final String browser;
 
-    public WebDriver create() {
+    // Constructor that accepts the browser type
+    public FirefoxDriverCreator(String browser) {
+        this.browser = browser;
+    }
+
+    public WebDriver create(boolean headless) {
         try {
             // Set up the FirefoxDriver using WebDriverManager
             WebDriverManager.firefoxdriver().setup();
@@ -18,12 +24,23 @@ public class FirefoxDriverCreator {
 
             // Set FirefoxOptions for the driver
             FirefoxOptions options = new FirefoxOptions();
-            // Add any desired options here
+        
+            // Configure headless mode
+            if (headless) {
+                options.addArguments("-headless"); // Enable headless mode
+                options.addArguments("--width=1920"); // Set width for headless mode
+                options.addArguments("--height=1080"); // Set height for headless mode
+                logger.info("Running Firefox in headless mode.");
+            } else {
+                options.addArguments("--start-maximized"); // Maximize window if not headless
+            }
+
+            // Additional Firefox preferences
             options.addPreference("signon.rememberSignons", false);
             options.addPreference("signon.autofillForms", false);
             options.addPreference("signon.autofillForms.http", false);
             
-            options.addArguments("--start-maximized"); // Example option
+            logger.info("FirefoxOptions set: {}", options);
 
             // Create and return the FirefoxDriver instance
             WebDriver driver = new FirefoxDriver(options);

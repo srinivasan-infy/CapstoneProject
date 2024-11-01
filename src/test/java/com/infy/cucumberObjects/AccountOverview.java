@@ -21,19 +21,19 @@ public class AccountOverview {
     private Map<String, String[]> accountData;
     WebDriverWait wait;
 
-    @FindBy(xpath = "//*[@id='accountTable']")  // locator for table
+    @FindBy(xpath = "//*[@id='accountTable']") 
     private WebElement accountTable1;
     
-    @FindBy(xpath = "//*[@id='accountTable']/tbody/tr")  // locator for table row
+    @FindBy(xpath = "//*[@id='accountTable']/tbody/tr")
     private WebElement accountTable;
     
     @FindBy(xpath = "//*[@id='accountTable']/tbody/tr")  
     public List<WebElement> accountTableBody;
     
-    @FindBy(xpath = "//*[@id='accountTable']/thead/tr/th")  // locator for table header
+    @FindBy(xpath = "//*[@id='accountTable']/thead/tr/th") 
     private List<WebElement> accountTableHeaders;
     
-    @FindBy(xpath = "//*[@id='accountTable']/tfoot/tr")  // locator for table footer
+    @FindBy(xpath = "//*[@id='accountTable']/tfoot/tr") 
     private WebElement accountTableFooter;
     
 	@FindBy(xpath = "//a[contains(text(),'Open New Account')]")
@@ -62,10 +62,10 @@ public class AccountOverview {
         for (int i = 0; i < expectedHeaders.length; i++) {
         	System.out.println("Header : "+ accountTableHeaders.get(i).getText() +"\n");
             if (!accountTableHeaders.get(i).getText().equals(expectedHeaders[i])) {
-                return false; // Return false if headers are not in the expected order
+                return false; 
             }
         }
-        return true; // All headers are in the expected order
+        return true; 
     }
 
     public boolean isAccountDetailsValid() {
@@ -94,9 +94,9 @@ public class AccountOverview {
     }
     
     public boolean isTotalBalanceCorrect() {
-        // Fetch rows from the Account Table
+
         List<WebElement> rows = accountTableBody;
-        // If no rows exist, return false immediately
+
         if (rows.isEmpty()) {
             return false;
         }
@@ -118,23 +118,23 @@ public class AccountOverview {
        // wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id='accountTable']/tbody/tr")));
         
         
-        WebElement tableBody = accountTable;  // Assume accountTable is already initialized
+        WebElement tableBody = accountTable;
 
         // Stream the rows, filter ones with at least 3 cells, and process each row
         tableBody.findElements(By.tagName("tr"))
             .stream()
-            .filter(row -> row.findElements(By.tagName("td")).size() >= 3)  // Filter out rows with less than 3 cells
+            .filter(row -> row.findElements(By.tagName("td")).size() >= 3)  
             .forEach(row -> {
                 List<WebElement> cells = row.findElements(By.tagName("td"));
 
-                String accountNumber = cells.get(0).getText().trim();  // First column (account number)
-                String balance = cells.get(1).getText().trim();        // Second column (balance)
-                String availableBalance = cells.get(2).getText().trim(); // Third column (available balance)
+                String accountNumber = cells.get(0).getText().trim(); 
+                String balance = cells.get(1).getText().trim();     
+                String availableBalance = cells.get(2).getText().trim(); 
 
-                accountData.put(accountNumber, new String[]{balance, availableBalance});  // Store in map
+                accountData.put(accountNumber, new String[]{balance, availableBalance});  
             });
         accountData.forEach((key, value) -> System.out.println(key + " = " + Arrays.toString(value)));
-        return accountData;  // Return the populated map
+        return accountData;  
     }
 
     public boolean verifyAccountNumberInTable(String accountNumber) {

@@ -69,7 +69,7 @@ public class OpenNewAccount {
 		wait.until(ExpectedConditions.visibilityOf(accountTypeDropdown));
 	    Select select = new Select(accountTypeDropdown);
 	    // Select the desired option (either "Saving" or "Checking")
-	    select.selectByVisibleText(accountType); // Use the text to select
+	    select.selectByVisibleText(accountType);
 	}
 	
 	public double fetchMinimumDeposit() {
@@ -79,7 +79,7 @@ public class OpenNewAccount {
         Matcher matcher = pattern.matcher(text);
         
         if (matcher.find()) {
-            String amount = matcher.group(1).replace(",", "");  // Remove commas for parsing
+            String amount = matcher.group(1).replace(",", ""); 
             return Double.parseDouble(amount);
         } else {
             throw new RuntimeException("Minimum deposit amount not found in the text.");
@@ -87,22 +87,18 @@ public class OpenNewAccount {
     }
 	
 	public String selectAccountNumber() {
-		// Create a Select object to interact with the dropdown
+
 	    Select accountID = new Select(fromAccountID);
 	    
-	    // Get all options from the dropdown
 	    List<WebElement> options = accountID.getOptions();
 	    
-	    // Check if options list is empty
 	    if (options.isEmpty()) {
 	        throw new IllegalStateException("No account numbers available in the dropdown.");
 	    }
 	    
-	    // Generate a random index
 	    Random random = new Random();
 	    int randomIndex = random.nextInt(options.size());
 	    
-	    // Select the account number random
 	    accountID.selectByIndex(randomIndex);
 	    String accountNumber = options.get(randomIndex).getText();
 		return accountNumber;	    

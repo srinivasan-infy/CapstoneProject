@@ -99,18 +99,14 @@ public class RegistrationPage {
 	public boolean fillRegistrationForm(String firstNameInput, String lastNameInput, String streetInput,
 			String cityInput, String stateInput, String zipCodeInput, String phoneNumberInput, String ssnInput,
 			String usernameInput, String passwordInput) {
-		// Create an array of WebElements to check for presence
-		WebElement[] elementsToCheck = { firstName, lastName, street, city, state, zipCode, phoneNumber, ssn, userName,
-				password, confirmPassword };
+		WebElement[] elementsToCheck = { firstName, lastName, street, city, state, zipCode, phoneNumber, ssn, userName, password, confirmPassword };
 
-		// Check presence of each WebElement
 		for (WebElement element : elementsToCheck) {
 			if (element == null || !isElementPresent(element)) {
-				return false; // Return false if any element is not present
+				return false;
 			}
 		}
 
-		// Fill in the fields if all elements are present
 		firstName.sendKeys(firstNameInput);
 		lastName.sendKeys(lastNameInput);
 		street.sendKeys(streetInput);
@@ -121,17 +117,17 @@ public class RegistrationPage {
 		ssn.sendKeys(ssnInput);
 		userName.sendKeys(usernameInput);
 		password.sendKeys(passwordInput);
-		confirmPassword.sendKeys(passwordInput); // Assume repeated password is the same as the original
+		confirmPassword.sendKeys(passwordInput); 
 
-		return true; // Return true if all fields were filled successfully
+		return true; 
 	}
 
 	private boolean isElementPresent(WebElement element) {
 		try {
-			wait.until(ExpectedConditions.visibilityOf(element)); // Check if the element is visible
-			return true; // Element is present
+			wait.until(ExpectedConditions.visibilityOf(element));
+			return true; 
 		} catch (Exception e) {
-			return false; // Element is not present
+			return false; 
 		}
 	}
 
@@ -170,7 +166,6 @@ public class RegistrationPage {
             userDetails.put("Status", columnData);
         }
         
-        // Reset for the next registration
         loginPage.clickRegisterLink();
     }
 
@@ -179,26 +174,20 @@ public class RegistrationPage {
         e.printStackTrace();
     }
     
-    
-  
     public String getColumnData(int columnIndex) {
         StringBuilder columnData = new StringBuilder();
 
         // Get all rows from the table
         List<WebElement> rows = registrationTable.findElements(By.tagName("tr"));
         
-        // Iterate through each row and get data from the specified column
         for (WebElement row : rows) {
             List<WebElement> cells = row.findElements(By.tagName("td"));
-            // Check if the row has enough cells to avoid IndexOutOfBoundsException
             if (cells.size() > columnIndex) {
                 String cellData = cells.get(columnIndex).getText();
-                columnData.append(cellData).append("\n"); // Append data and a newline for better readability
+                columnData.append(cellData).append("\n"); 
             }
         }
-        
-        return columnData.toString().trim(); // Return the result as a string
+        return columnData.toString().trim(); 
     }
-    
-    
+       
 }
