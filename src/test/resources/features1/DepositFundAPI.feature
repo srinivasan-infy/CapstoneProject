@@ -15,4 +15,4 @@ Scenario Outline: Login Successful
 	
     Examples:
       | username     					| password     	  	|	landingpage					|
-      | testing11   						| testing123   			|	Accounts Overview		|
+      | Aurelio_Thompson   						| pr6rhw7omi81k   			|	Accounts Overview		|

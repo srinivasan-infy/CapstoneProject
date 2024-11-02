@@ -113,13 +113,8 @@ public class AccountOverview {
  // Method to fetch data from the account overview web table
     public Map<String, String[]> fetchWebTableData() {
         accountData = new LinkedHashMap<>();
-
-       // Wait for the rows in the table to be present
-       // wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id='accountTable']/tbody/tr")));
-        
-        
+       
         WebElement tableBody = accountTable;
-
         // Stream the rows, filter ones with at least 3 cells, and process each row
         tableBody.findElements(By.tagName("tr"))
             .stream()
