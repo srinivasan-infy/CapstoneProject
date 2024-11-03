@@ -6,152 +6,165 @@ import io.restassured.http.ContentType;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import java.util.Map;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
 //import java.net.URL;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
-
 
 public class APIUtility {
 
 	private static final Logger logger = LoggerFactory.getLogger(APIUtility.class);
-	
+
 	public static String sendGetRequestAndFetchKey(String baseUrl, String endpoint, String accountId, String key) {
-		// Build the URL dynamically by adding the accountID
 		String url = baseUrl + endpoint + accountId;
 		System.out.println(url);
-		// Send the GET request and get the response
-		Response response = given().header("Accept", "application/json") // Setting the Accept header to application/json
-				.header("Content-Type", "application/json") // Setting the Content-Type header to application/json
-				.when().get(url) // Sending the GET request to the dynamic URL
-				.then().statusCode(200) // Ensure the status code is 200
-				.extract().response(); // Extract the response
+		Response response = given().header("Accept", "application/json").header("Content-Type", "application/json")
+				.when().get(url).then().statusCode(200).extract().response();
 
-	    System.out.println("Response: ");
-	    response.prettyPrint();
+		System.out.println("Response: ");
+		response.prettyPrint();
 
-	    // Fetch the data for the specific key from the JSON response
-	    String value = response.jsonPath().getString(key);
-	    return value; 
-	    
+		String value = response.jsonPath().getString(key);
+		return value;
+
 	}
-	
-	
-	// Method for sending GET requests
-    public JSONObject sendGetRequest(String endpoint, Map<String, String> headers) throws IOException, URISyntaxException {
-        HttpURLConnection connection = (HttpURLConnection) new URI(endpoint).toURL().openConnection();
-        connection.setRequestMethod("GET");
 
-        // Set headers if any
-        if (headers != null) {
-            for (Map.Entry<String, String> entry : headers.entrySet()) {
-                connection.setRequestProperty(entry.getKey(), entry.getValue());
-            }
-        }
+	public static Response sendGetRequest(String baseUrl, String endpoint, String accountId) {
+		String url = baseUrl + endpoint + accountId;
+		System.out.println("GET Request URL: " + url);
 
-        return handleResponse(connection);
-    }
+		Response response = given().header("Accept", "application/json").header("Content-Type", "application/json")
+				.when().get(url).then().statusCode(200).extract().response();
 
-    // Method for sending POST requests
-    public JSONObject sendPostRequest(String endpoint, JSONObject payload, Map<String, String> headers) throws IOException, URISyntaxException {
-        HttpURLConnection connection = (HttpURLConnection) new URI(endpoint).toURL().openConnection();
-        connection.setRequestMethod("POST");
-        connection.setDoOutput(true);
-        connection.setRequestProperty("Content-Type", "application/json");
+		System.out.println("GET Response: ");
+		response.prettyPrint();
 
-        // Set headers if any
-        if (headers != null) {
-            for (Map.Entry<String, String> entry : headers.entrySet()) {
-                connection.setRequestProperty(entry.getKey(), entry.getValue());
-            }
-        }
+		return response;
+	}
 
-        // Write payload
-        try (var os = connection.getOutputStream()) {
-            byte[] input = payload.toString().getBytes(StandardCharsets.UTF_8);
-            os.write(input, 0, input.length);
-        }
+	// Function to make a GET request with baseURL and endpoint
+	public static String sendGETRequest(String baseURL, String endpoint) {
+		RestAssured.baseURI = baseURL;
 
-        return handleResponse(connection);
-    }
+		Response response = RestAssured.given().header("Content-Type", "application/json").when().get(endpoint);
 
-    // Common method to handle responses
-    private JSONObject handleResponse(HttpURLConnection connection) throws IOException {
-        int responseCode = connection.getResponseCode();
-        logger.info("Response Code: {}", responseCode);
+		if (response.getStatusCode() == 200) {
+			return response.getBody().asString();
+		} else {
+			return "GET request failed. Response code: " + response.getStatusCode();
+		}
+	}
 
-        try (InputStream inputStream = responseCode < 400 ? connection.getInputStream() : connection.getErrorStream()) {
-            String response = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
-            return new JSONObject(response);
-        } finally {
-            connection.disconnect();
-        }
-    }
-	
-	
+	public static Response sendGetRequestWithQueryParams(String baseUrl, String endpoint,
+			Map<String, String> queryParams) {
+		String url = baseUrl + endpoint;
+		System.out.println("GET Request URL: " + url + " with query params: " + queryParams);
+
+		Response response = given().header("Accept", "application/json").header("Content-Type", "application/json")
+				.queryParams(queryParams).when().get(url).then().statusCode(200).extract().response();
+
+		System.out.println("GET Response: ");
+		response.prettyPrint();
+
+		return response;
+	}
+
+	public static Response sendGetRequestWithHeaders(String baseUrl, String endpoint, String accountId,
+			Map<String, String> headers) {
+		String url = baseUrl + endpoint + accountId;
+		System.out.println("GET Request URL: " + url);
+
+		Response response = given().headers(headers).when().get(url).then().statusCode(200).extract().response();
+
+		System.out.println("GET Response: ");
+		response.prettyPrint();
+
+		return response;
+	}
+
 	public static void sendPostRequestAndVerifyResponse(String baseUrl, String accountId, String amount) {
-        // Build the URL for deposit
-        String url = baseUrl + "/services/bank/deposit";
+		String url = baseUrl + "/services/bank/deposit";
 
-        // Expected success message based on the provided accountID and amount
-        String expectedMessage = "Successfully deposited $" + amount + " to account #" + accountId;
+		String expectedMessage = "Successfully deposited $" + amount + " to account #" + accountId;
+		Response response = given().header("Accept", "application/json").header("Content-Type", "application/json")
+				.queryParam("accountId", accountId).queryParam("amount", amount).when().post(url).then().statusCode(200)
+				.body(containsString(expectedMessage)).extract().response();
+		System.out.println("Response: " + response.asString());
+	}
 
-        // Send the POST request with accountId and amount as query parameters
-        Response response = given()
-                .header("Accept", "application/json") // Setting the Accept header
-                .header("Content-Type", "application/json") // Setting the Content-Type header
-                .queryParam("accountId", accountId) // Adding accountId as a query parameter
-                .queryParam("amount", amount) // Adding amount as a query parameter
-                .when()
-                .post(url) // Sending POST request
-                .then()
-                .statusCode(200) // Ensure the status code is 200 (OK)
-                .body(containsString(expectedMessage)) // Verifying the response contains the expected message
-                .extract()
-                .response(); // Extracting the response
-        
-        // Print the full response for logging or debugging purposes
-        System.out.println("Response: " + response.asString());
-    }	
-	
-	
-	 // Function to make a GET request with baseURL and endpoint
-    public static String sendGETRequest(String baseURL, String endpoint) {
-        // Set RestAssured base URL
-        RestAssured.baseURI = baseURL;
+	public static Response sendPostRequest(String baseUrl, String endpoint, Object body) {
+		String url = baseUrl + endpoint;
+		System.out.println("POST Request URL: " + url);
 
-        // Perform GET request with the Content-Type set to application/json
-        Response response = RestAssured
-                                .given()
-                                .header("Content-Type", "application/json")  // Set Content-Type to application/json
-                                .when()
-                                .get(endpoint);  // Perform GET request to the endpoint
+		Response response = given().header("Accept", "application/json").header("Content-Type", "application/json")
+				.body(body).when().post(url).then().statusCode(201)
+				.extract().response();
 
-        // Check if the response is successful (HTTP status 200)
-        if (response.getStatusCode() == 200) {
-            return response.getBody().asString(); // Return the response body as a string
-        } else {
-            return "GET request failed. Response code: " + response.getStatusCode();
-        }
-    }
-    
-    public static Response getRequest(String url, Map<String, String> headers, Map<String, String> queryParams,
-    	      ContentType contentType) {
-    	    return given()
-    	    		.relaxedHTTPSValidation()
-    	    		.urlEncodingEnabled(false)
-    	    		.headers(headers)
-    	    		.queryParams(queryParams)
-    	    		.contentType(contentType)
-    	        .when()
-    	        	.log().all().get(url)
-    	        .then()
-    	        	.log().all().extract().response();
-    	  }
+		System.out.println("POST Response: ");
+		response.prettyPrint();
+
+		return response;
+	}
+
+	public static Response sendPostRequestWithHeaders(String baseUrl, String endpoint, Object body,
+			Map<String, String> headers) {
+		String url = baseUrl + endpoint;
+		System.out.println("POST Request URL: " + url);
+
+		Response response = given().headers(headers).body(body).when().post(url).then().statusCode(201)
+				.extract().response();
+
+		System.out.println("POST Response: ");
+		response.prettyPrint();
+
+		return response;
+	}
+
+	public static Response sendPostRequestWithQueryParams(String baseUrl, String endpoint, Object body,
+			Map<String, String> queryParams) {
+		String url = baseUrl + endpoint;
+		System.out.println("POST Request URL: " + url + " with query params: " + queryParams);
+
+		Response response = given().header("Accept", "application/json").header("Content-Type", "application/json")
+				.queryParams(queryParams).body(body).when().post(url).then().statusCode(201)
+				.extract().response();
+
+		System.out.println("POST Response: ");
+		response.prettyPrint();
+
+		return response;
+	}
+
+	public static Response sendPutRequest(String baseUrl, String endpoint, String accountId, Object body) {
+		String url = baseUrl + endpoint + accountId;
+		System.out.println("PUT Request URL: " + url);
+
+		Response response = given().header("Accept", "application/json").header("Content-Type", "application/json")
+				.body(body).when().put(url).then().statusCode(200)
+				.extract().response();
+
+		System.out.println("PUT Response: ");
+		response.prettyPrint();
+
+		return response;
+	}
+
+	public static Response sendDeleteRequest(String baseUrl, String endpoint, String accountId) {
+		String url = baseUrl + endpoint + accountId;
+		System.out.println("DELETE Request URL: " + url);
+
+		Response response = given().header("Accept", "application/json").header("Content-Type", "application/json")
+				.when().delete(url).then().statusCode(204)
+				.extract().response();
+
+		System.out.println("DELETE Response: ");
+		response.prettyPrint();
+
+		return response;
+	}
+
+	public static Response getRequest(String url, Map<String, String> headers, Map<String, String> queryParams,
+			ContentType contentType) {
+		return given().relaxedHTTPSValidation().urlEncodingEnabled(false).headers(headers).queryParams(queryParams)
+				.contentType(contentType).when().log().all().get(url).then().log().all().extract().response();
+	}
 }
