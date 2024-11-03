@@ -40,7 +40,9 @@ public class CustomerInfoUpdateSteps {
     public void userIsOnTheRegistrationPage() {
         driver.get("URL_OF_REGISTRATION_PAGE"); // Replace with actual URL
     }
+}
 
+/*
     @When("User enters registration details from excel file {string}")
     public void userEntersRegistrationDetailsFromExcel(String filePath) {
         String[] registrationDetails = excelUtils.readData(filePath, "Sheet1"); // Modify as needed
@@ -91,3 +93,4 @@ public class CustomerInfoUpdateSteps {
         assertEquals("Expected Updated Info", updatedInfo); // Replace with actual expected updated info
     }
 }
+ */
