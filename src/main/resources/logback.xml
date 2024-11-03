@@ -2,7 +2,7 @@
 
   <!-- Define a File Appender -->
   <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-    <file>logs/testFile.log</file>
+    <file>logs/debug_output.log</file>
     <append>true</append>
     <immediateFlush>true</immediateFlush>
     <encoder>
