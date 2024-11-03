@@ -31,8 +31,10 @@ jobs:
       - name: List logs
         run: dir logs  # Check if the log file is created
         
-      - name: Upload logs
+      - name: Upload logs and extent report
         uses: actions/upload-artifact@v3
         with:
-          name: test-logs
-          path: logs/testFile.log  # Path to your log file
+          name: artifacts
+          path: |
+            logs/testFile.log  # Path to your log file
+            target/**/*extentreport.html
