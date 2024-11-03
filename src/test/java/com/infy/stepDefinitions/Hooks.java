@@ -30,8 +30,7 @@ public class Hooks {
     	ConfigLoaderUtility.setPropertiesFilePath("./src/main/resources/AutomationConfig.properties");
         config = ConfigLoaderUtility.loadProperties();
         driver = DriverManager.getInstance().getDriver();
-        //ExtentReportSetup.createTest(scenario.getName());
-  
+ 
         String testName = scenario.getName();
         String testType = scenario.getSourceTagNames().stream()
                 .findFirst()
