@@ -3,6 +3,7 @@ package com.infy.stepDefinitions;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.testng.Assert;
 import com.infy.cucumberObjects.*;
 import com.infy.driverFactory.DriverManager;
 
+import java.time.Duration;
 import java.util.Map;
 import static org.testng.Assert.*;
 import com.infy.utility.ExcelUtility;
@@ -21,7 +23,7 @@ public class OpenNewAccountStep {
 	private String newAccountNumber;
 	private String deductedFromAccount;
 	private double minimumDeposit;
-	private WebDriverWait wait;
+	private FluentWait<WebDriver> wait;
 
 	private WebDriver driver;
     private AccountOverview accountOverview;
@@ -30,6 +32,10 @@ public class OpenNewAccountStep {
   
     public OpenNewAccountStep() {
         this.driver = DriverManager.getInstance().getDriver();
+        this.wait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofSeconds(5)) 
+                .ignoring(Exception.class);
         initializeObjects();
     }
     
@@ -39,8 +45,6 @@ public class OpenNewAccountStep {
         accountServices = new AccountServices(driver);
     }	
 	
-	
-
 	@Then("User select the account type {string}")
 	public void user_select_the_account_type(String accountType) {
 		try {

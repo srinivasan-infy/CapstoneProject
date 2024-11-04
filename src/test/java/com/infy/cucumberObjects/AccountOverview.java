@@ -24,7 +24,7 @@ public class AccountOverview {
     @FindBy(xpath = "//*[@id='accountTable']") 
     private WebElement accountTable1;
     
-    @FindBy(xpath = "//*[@id='accountTable']/tbody/tr")
+    @FindBy(xpath = "//*[@id='accountTable']/tbody")
     private WebElement accountTable;
     
     @FindBy(xpath = "//*[@id='accountTable']/tbody/tr")  

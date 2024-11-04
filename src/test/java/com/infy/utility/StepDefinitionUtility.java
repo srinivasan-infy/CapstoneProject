@@ -23,7 +23,6 @@ public class StepDefinitionUtility{
 	
 	WebDriverWait wait;
 
-	//Method that accepts accountOverview and performs verification
 	public static void verifyAccountAndBalance(AccountOverview accountOverview, String accountNumber, double expectedBalance) {
 	    boolean accountNumberFound = accountOverview.verifyAccountNumberInTable(accountNumber);
 	    Assert.assertTrue(accountNumberFound, "Account number is not displayed in the table.");

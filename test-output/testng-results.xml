@@ -2,46 +2,46 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-30T17:34:19 IST" name="Default suite" finished-at="2024-10-30T17:34:27 IST" duration-ms="8368">
+  <suite started-at="2024-11-04T18:04:15 IST" name="Default suite" finished-at="2024-11-04T18:04:49 IST" duration-ms="34304">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.infy.runners.TestRunner@a82c5f1]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-10-30T17:34:19 IST" name="Default test" finished-at="2024-10-30T17:34:27 IST" duration-ms="8368">
+    <test started-at="2024-11-04T18:04:15 IST" name="Default test" finished-at="2024-11-04T18:04:49 IST" duration-ms="34304">
       <class name="com.infy.runners.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.infy.runners.TestRunner@a82c5f1]" started-at="2024-10-30T17:34:19 IST" name="setUpClass" finished-at="2024-10-30T17:34:19 IST" duration-ms="473" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.infy.runners.TestRunner@a82c5f1]" started-at="2024-11-04T18:04:15 IST" name="setUpClass" finished-at="2024-11-04T18:04:15 IST" duration-ms="374" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6a7ab205]]>
+                <![CDATA[org.testng.TestRunner@22899683]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.infy.runners.TestRunner@a82c5f1]" started-at="2024-10-30T17:34:19 IST" name="setUpClass" finished-at="2024-10-30T17:34:19 IST" duration-ms="228" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.infy.runners.TestRunner@a82c5f1]" started-at="2024-11-04T18:04:15 IST" name="setUpClass" finished-at="2024-11-04T18:04:15 IST" duration-ms="160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.infy.runners.TestRunner@a82c5f1]" started-at="2024-10-30T17:34:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-30T17:34:27 IST" duration-ms="7606" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.infy.runners.TestRunner@a82c5f1]" started-at="2024-11-04T18:04:15 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-04T18:04:49 IST" duration-ms="33685" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User registers with random data"]]>
+                <![CDATA["Login Successful"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Customer Registration Process Using Faker/Json"]]>
+                <![CDATA["Account Overview Page verification"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.infy.runners.TestRunner@a82c5f1]" started-at="2024-10-30T17:34:27 IST" name="tearDownClass" finished-at="2024-10-30T17:34:27 IST" duration-ms="15" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.infy.runners.TestRunner@a82c5f1]" started-at="2024-11-04T18:04:49 IST" name="tearDownClass" finished-at="2024-11-04T18:04:49 IST" duration-ms="45" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
