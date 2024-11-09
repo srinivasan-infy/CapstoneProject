@@ -10,10 +10,41 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 //import java.net.URL;
 
+import com.infy.driverFactory.ConfigLoaderUtility;
+
 public class APIUtility {
 
 	private static final Logger logger = LoggerFactory.getLogger(APIUtility.class);
+	private static final String username = ConfigLoaderUtility.getProperty("jiraURL").orElse("srinivasan");
+	private static final String personalAccessToken = ConfigLoaderUtility.getProperty("jiraPAT").orElse("ODcyMDMyODg1MjE5Ol/Oo9ZnBG3lnIL3q2ak28gTPts4");
+	private static String jiraUrl = ConfigLoaderUtility.getProperty("jiraURL").orElse("http://localhost:6060/rest/api/2/issue/");
+	
+	public static void updateJiraIssue(String issueKey, boolean status, String scenarioName) {
+		
+		String optionId = status ? "10001" : "10000";
+		String json = String.format("{\"fields\": {\"customfield_10200\": {\"id\": \"%s\"}}}", optionId);
+	
+		try {
+			Response response = given().contentType(ContentType.JSON)
+					.header("Authorization", "Bearer " + personalAccessToken)
+					.body(json).when().put(jiraUrl + issueKey);
 
+			int statusCode = response.getStatusCode();
+			logger.info("Response Code: {}", statusCode);
+
+			if (statusCode == 204) {
+				logger.info("Successfully updated JIRA issue: {} with status: {} and scenario: {}", issueKey, status,
+						scenarioName);
+			} else {
+				logger.error("Error updating JIRA issue: {} with status: {}. Response: {}", issueKey, status,
+						response.getBody().asString());
+			}
+		} catch (Exception e) {
+			logger.error("Error updating JIRA issue: {} with status: {}. Exception: {}", issueKey, status,
+					e.getMessage(), e);
+		}
+	}
+	
 	public static String sendGetRequestAndFetchKey(String baseUrl, String endpoint, String accountId, String key) {
 		String url = baseUrl + endpoint + accountId;
 		System.out.println(url);

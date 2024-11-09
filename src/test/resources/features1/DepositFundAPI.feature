@@ -2,7 +2,7 @@
 # Deposit Fund API.feature
 Feature: To verify the deposit fund API is working
 
-Scenario Outline: Login Successful
+Scenario Outline: Deposit Fund API verification
   Given User is on the login page
   When User enters valid credentials "<username>" and "<password>"
   And User clicks the login button

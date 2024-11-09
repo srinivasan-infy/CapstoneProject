@@ -1,7 +1,8 @@
 # Open New Account.feature
-Feature: Open New Account verification
+Feature: Account Overview Page verification
 
-Scenario Outline: Login Successful
+@Regression
+Scenario Outline: Account Overview Page verification
   Given User is on the login page
   When User enters valid credentials "<username>" and "<password>"
   And User clicks the login button
