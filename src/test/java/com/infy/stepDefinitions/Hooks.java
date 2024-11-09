@@ -22,7 +22,7 @@ public class Hooks {
 	private ExtentTest test;
 	// private Properties config;
 	int count = 0;
-	private static String issueKey="AUT-24";
+	private static String issueKey="";
 	
 	@Before
 	public void setUp(Scenario scenario) {
@@ -55,9 +55,18 @@ public class Hooks {
 	@After
 	public void tearDown(Scenario scenario) {
 		ExtentReportSetup.removeTest();
-//		String status = scenario.isFailed() ? "Fail" : "Pass";
-		APIUtility.updateJiraIssue(issueKey, scenario.isFailed(), scenario.getName());
-
+		String testStatus = scenario.isFailed() ? "Fail" : "Pass";
+		for (String tag : scenario.getSourceTagNames()) {
+            if (tag.startsWith("@jira(")) {
+            	issueKey = tag.substring(6, tag.length() - 1); // Extract the issue ID
+                break;
+            }
+        }
+		
+		if (!issueKey.isEmpty()) {
+			APIUtility.updateJiraIssue(issueKey, scenario.isFailed(), testStatus, scenario.getName());
+        }
+		
 		DriverManager.getInstance().quitDriver();
 		count = 0;
 	}

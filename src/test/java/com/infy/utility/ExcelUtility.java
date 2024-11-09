@@ -276,6 +276,7 @@ public class ExcelUtility {
 				data.add(rowData);
 			}
 		}
+		workbook.close();
 		return data;
 	}
 
@@ -359,6 +360,7 @@ public class ExcelUtility {
 				data.put(primaryKey, rowData);
 			}
 		}
+		workbook.close();
 		return data;
 	}
 

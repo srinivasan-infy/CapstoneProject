@@ -1,5 +1,6 @@
 Feature: Customer Registration Process Using Faker/Json
 
+@jira(AUT-24)
 @Smoke @Regression
 Scenario: User registers with random data
     Given User is on the registration pages

@@ -2,11 +2,9 @@ package com.infy.cucumberObjects;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,8 +12,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.infy.driverFactory.DriverManager;
 
 public class OpenNewAccount {
 	private WebDriver driver;
