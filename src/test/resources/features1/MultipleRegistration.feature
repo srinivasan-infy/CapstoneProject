@@ -1,3 +1,4 @@
+@Smoke
 Feature: Multiple Customer Registration Process Using Faker/Json
 
 Scenario: User registers with random data
