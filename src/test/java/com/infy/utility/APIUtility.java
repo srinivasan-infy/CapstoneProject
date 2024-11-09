@@ -16,10 +16,11 @@ public class APIUtility {
 
 	private static final Logger logger = LoggerFactory.getLogger(APIUtility.class);
 	private static final String username = ConfigLoaderUtility.getProperty("jiraURL").orElse("srinivasan");
-	private static final String personalAccessToken = ConfigLoaderUtility.getProperty("jiraPAT").orElse("ODcyMDMyODg1MjE5Ol/Oo9ZnBG3lnIL3q2ak28gTPts4");
+	private static final String personalAccessToken = ConfigLoaderUtility.getProperty("jiraPAT")
+																		 .orElse("ODcyMDMyODg1MjE5Ol/Oo9ZnBG3lnIL3q2ak28gTPts4");
 	private static String jiraUrl = ConfigLoaderUtility.getProperty("jiraURL").orElse("http://localhost:6060/rest/api/2/issue/");
 	
-	public static void updateJiraIssue(String issueKey, boolean status, String scenarioName) {
+	public static void updateJiraIssue(String issueKey, boolean status, String Status, String scenarioName) {
 		
 		String optionId = status ? "10001" : "10000";
 		String json = String.format("{\"fields\": {\"customfield_10200\": {\"id\": \"%s\"}}}", optionId);
@@ -33,14 +34,14 @@ public class APIUtility {
 			logger.info("Response Code: {}", statusCode);
 
 			if (statusCode == 204) {
-				logger.info("Successfully updated JIRA issue: {} with status: {} and scenario: {}", issueKey, status,
+				logger.info("Successfully updated JIRA issue: {} with status: {} and scenario: {}", issueKey, Status,
 						scenarioName);
 			} else {
-				logger.error("Error updating JIRA issue: {} with status: {}. Response: {}", issueKey, status,
+				logger.error("Error updating JIRA issue: {} with status: {}. Response: {}", issueKey, Status,
 						response.getBody().asString());
 			}
 		} catch (Exception e) {
-			logger.error("Error updating JIRA issue: {} with status: {}. Exception: {}", issueKey, status,
+			logger.error("Error updating JIRA issue: {} with status: {}. Exception: {}", issueKey, Status,
 					e.getMessage(), e);
 		}
 	}

@@ -13,7 +13,7 @@ import com.infy.utility.ExtentReportSetup;
 	    features = "src/test/resources/features",
 	    glue = {"com.infy.stepDefinitions"},
 	    plugin = {"pretty", "html:target/cucumber-html-report","json:target/cucumber.json"},
-	    tags = "@Regression and @Smoke"
+	    tags = "@Regression or @Smoke"
 	)
 
 public class TestRunner extends AbstractTestNGCucumberTests {

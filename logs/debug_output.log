@@ -1,0 +1,64 @@
+1489 [TestNG-PoolService-4] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: false
+1489 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: false
+1489 [TestNG-PoolService-3] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: false
+1489 [TestNG-PoolService-2] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: false
+1489 [TestNG-PoolService-5] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: false
+1495 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - Starting local WebDriver for browser: CHROME
+1495 [TestNG-PoolService-5] INFO  c.infy.driverFactory.DriverManager - Starting local WebDriver for browser: CHROME
+1495 [TestNG-PoolService-3] INFO  c.infy.driverFactory.DriverManager - Starting local WebDriver for browser: CHROME
+1495 [TestNG-PoolService-2] INFO  c.infy.driverFactory.DriverManager - Starting local WebDriver for browser: CHROME
+1495 [TestNG-PoolService-4] INFO  c.infy.driverFactory.DriverManager - Starting local WebDriver for browser: CHROME
+2748 [TestNG-PoolService-5] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
+2748 [TestNG-PoolService-4] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
+2748 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
+2748 [TestNG-PoolService-2] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
+2748 [TestNG-PoolService-3] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
+2752 [TestNG-PoolService-3] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: []}}
+2752 [TestNG-PoolService-4] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: []}}
+2752 [TestNG-PoolService-2] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: []}}
+2752 [TestNG-PoolService-5] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: []}}
+2752 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: []}}
+5018 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
+5018 [TestNG-PoolService-5] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
+5018 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
+5018 [TestNG-PoolService-5] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
+5018 [TestNG-PoolService-4] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
+5018 [TestNG-PoolService-4] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
+5018 [TestNG-PoolService-2] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
+5018 [TestNG-PoolService-3] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
+5018 [TestNG-PoolService-2] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
+5019 [TestNG-PoolService-3] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
+5060 [TestNG-PoolService-3] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
+5062 [TestNG-PoolService-2] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
+5060 [TestNG-PoolService-5] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
+5060 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
+5062 [TestNG-PoolService-4] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
+10838 [TestNG-PoolService-2] WARN  c.infy.stepDefinitions.LoginSteps - Entering invalid credentials: username=capstone1, password=gEqUzem1
+10853 [TestNG-PoolService-3] WARN  c.infy.stepDefinitions.LoginSteps - Entering invalid credentials: username=mngr597286, password=
+10862 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Entering valid credentials: username=testing, password=testing123
+10870 [TestNG-PoolService-5] WARN  c.infy.stepDefinitions.LoginSteps - Entering invalid credentials: username=, password=
+10976 [TestNG-PoolService-4] WARN  c.infy.stepDefinitions.LoginSteps - Entering invalid credentials: username=, password=mngr597286
+11325 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
+11385 [TestNG-PoolService-5] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
+11401 [TestNG-PoolService-2] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
+11415 [TestNG-PoolService-3] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
+11479 [TestNG-PoolService-4] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
+12175 [TestNG-PoolService-5] ERROR c.infy.stepDefinitions.LoginSteps - Validating missing password message. Expected: Please enter a username and password., Actual: Please enter a username and password.
+12183 [TestNG-PoolService-4] ERROR c.infy.stepDefinitions.LoginSteps - Validating missing password message. Expected: Please enter a username and password., Actual: Please enter a username and password.
+12556 [TestNG-PoolService-2] ERROR c.infy.stepDefinitions.LoginSteps - Expected error message: The username and password could not be verified., Actual: The username and password could not be verified.
+12615 [TestNG-PoolService-3] ERROR c.infy.stepDefinitions.LoginSteps - Validating missing password message. Expected: Please enter a username and password., Actual: Please enter a username and password.
+18372 [TestNG-PoolService-4] INFO  com.infy.utility.APIUtility - Response Code: 204
+18372 [TestNG-PoolService-3] INFO  com.infy.utility.APIUtility - Response Code: 204
+18371 [TestNG-PoolService-5] INFO  com.infy.utility.APIUtility - Response Code: 204
+18372 [TestNG-PoolService-3] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-27 with status: Pass and scenario: Login with either UserName and Password
+18372 [TestNG-PoolService-4] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-27 with status: Pass and scenario: Login with either UserName and Password
+18372 [TestNG-PoolService-5] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-27 with status: Pass and scenario: Login with either UserName and Password
+18615 [TestNG-PoolService-4] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
+18629 [TestNG-PoolService-5] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
+20201 [TestNG-PoolService-3] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
+20829 [TestNG-PoolService-2] INFO  com.infy.utility.APIUtility - Response Code: 204
+20829 [TestNG-PoolService-2] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-26 with status: Pass and scenario: Login with invalid UserName and Password
+20983 [TestNG-PoolService-2] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
+23084 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Response Code: 204
+23084 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-25 with status: Fail and scenario: Login Successful
+23288 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
