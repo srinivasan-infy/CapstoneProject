@@ -3,10 +3,10 @@ package com.infy.runners;
 import java.io.IOException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.DataProvider;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-//import com.aventstack.extentreports.Status;
 import com.infy.utility.ExtentReportSetup;
 
 @CucumberOptions(
@@ -25,7 +25,9 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     }
 	
 	@BeforeClass(alwaysRun = true)
-    public void setUpClass() throws IOException {
+	@Parameters("browser")
+    public void setUpClass(String browser) throws IOException {
+        System.setProperty("browser", browser);
         ExtentReportSetup.init();
     }
 

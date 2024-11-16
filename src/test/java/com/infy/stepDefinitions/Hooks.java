@@ -20,7 +20,6 @@ public class Hooks {
 	private static final Logger logger = LoggerFactory.getLogger(Hooks.class);
 	private WebDriver driver;
 	private ExtentTest test;
-	// private Properties config;
 	int count = 0;
 	private static String issueKey="";
 	
