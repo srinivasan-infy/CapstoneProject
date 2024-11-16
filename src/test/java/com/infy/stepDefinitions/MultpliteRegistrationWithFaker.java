@@ -3,21 +3,17 @@ package com.infy.stepDefinitions;
 import com.github.javafaker.Faker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
 import com.infy.cucumberObjects.*;
 import com.infy.driverFactory.DriverManager;
 import com.infy.models.User;
 import com.infy.utility.ExtendReportScreenShot;
-import com.infy.utility.StepDefinitionUtility;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 

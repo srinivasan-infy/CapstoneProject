@@ -36,14 +36,21 @@ public class FirefoxDriverCreator {
             }
 
             // Additional Firefox preferences
-            options.addPreference("signon.rememberSignons", false);
-            options.addPreference("signon.autofillForms", false);
-            options.addPreference("signon.autofillForms.http", false);
-            
+            options.addPreference("browser.formfill.enable", false); 
+            options.addPreference("extensions.formautofill.addresses.enabled", false); 
+            options.addPreference("extensions.formautofill.addresses.capture.enabled", false);
+            options.addPreference("signon.rememberSignons", false); 
+            options.addPreference("signon.autofillForms", false); 
             logger.info("FirefoxOptions set: {}", options);
 
             // Create and return the FirefoxDriver instance
             WebDriver driver = new FirefoxDriver(options);
+            
+            if (!headless) {
+                driver.manage().window().maximize();
+                logger.info("Firefox browser window maximized.");
+            }            
+            
             logger.info("FirefoxDriver instance created successfully.");
             return driver;
 

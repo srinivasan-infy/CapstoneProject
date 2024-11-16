@@ -1,64 +1,112 @@
-1489 [TestNG-PoolService-4] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: false
-1489 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: false
-1489 [TestNG-PoolService-3] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: false
-1489 [TestNG-PoolService-2] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: false
-1489 [TestNG-PoolService-5] INFO  c.infy.driverFactory.DriverManager - Headless mode is set to: false
-1495 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - Starting local WebDriver for browser: CHROME
-1495 [TestNG-PoolService-5] INFO  c.infy.driverFactory.DriverManager - Starting local WebDriver for browser: CHROME
-1495 [TestNG-PoolService-3] INFO  c.infy.driverFactory.DriverManager - Starting local WebDriver for browser: CHROME
-1495 [TestNG-PoolService-2] INFO  c.infy.driverFactory.DriverManager - Starting local WebDriver for browser: CHROME
-1495 [TestNG-PoolService-4] INFO  c.infy.driverFactory.DriverManager - Starting local WebDriver for browser: CHROME
-2748 [TestNG-PoolService-5] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
-2748 [TestNG-PoolService-4] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
-2748 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
-2748 [TestNG-PoolService-2] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
-2748 [TestNG-PoolService-3] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
-2752 [TestNG-PoolService-3] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: []}}
-2752 [TestNG-PoolService-4] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: []}}
-2752 [TestNG-PoolService-2] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: []}}
-2752 [TestNG-PoolService-5] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: []}}
-2752 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: []}}
-5018 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
-5018 [TestNG-PoolService-5] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
-5018 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
-5018 [TestNG-PoolService-5] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
-5018 [TestNG-PoolService-4] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
-5018 [TestNG-PoolService-4] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
-5018 [TestNG-PoolService-2] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
-5018 [TestNG-PoolService-3] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
-5018 [TestNG-PoolService-2] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
-5019 [TestNG-PoolService-3] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
-5060 [TestNG-PoolService-3] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
-5062 [TestNG-PoolService-2] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
-5060 [TestNG-PoolService-5] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
-5060 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
-5062 [TestNG-PoolService-4] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
-10838 [TestNG-PoolService-2] WARN  c.infy.stepDefinitions.LoginSteps - Entering invalid credentials: username=capstone1, password=gEqUzem1
-10853 [TestNG-PoolService-3] WARN  c.infy.stepDefinitions.LoginSteps - Entering invalid credentials: username=mngr597286, password=
-10862 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Entering valid credentials: username=testing, password=testing123
-10870 [TestNG-PoolService-5] WARN  c.infy.stepDefinitions.LoginSteps - Entering invalid credentials: username=, password=
-10976 [TestNG-PoolService-4] WARN  c.infy.stepDefinitions.LoginSteps - Entering invalid credentials: username=, password=mngr597286
-11325 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
-11385 [TestNG-PoolService-5] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
-11401 [TestNG-PoolService-2] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
-11415 [TestNG-PoolService-3] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
-11479 [TestNG-PoolService-4] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
-12175 [TestNG-PoolService-5] ERROR c.infy.stepDefinitions.LoginSteps - Validating missing password message. Expected: Please enter a username and password., Actual: Please enter a username and password.
-12183 [TestNG-PoolService-4] ERROR c.infy.stepDefinitions.LoginSteps - Validating missing password message. Expected: Please enter a username and password., Actual: Please enter a username and password.
-12556 [TestNG-PoolService-2] ERROR c.infy.stepDefinitions.LoginSteps - Expected error message: The username and password could not be verified., Actual: The username and password could not be verified.
-12615 [TestNG-PoolService-3] ERROR c.infy.stepDefinitions.LoginSteps - Validating missing password message. Expected: Please enter a username and password., Actual: Please enter a username and password.
-18372 [TestNG-PoolService-4] INFO  com.infy.utility.APIUtility - Response Code: 204
-18372 [TestNG-PoolService-3] INFO  com.infy.utility.APIUtility - Response Code: 204
-18371 [TestNG-PoolService-5] INFO  com.infy.utility.APIUtility - Response Code: 204
-18372 [TestNG-PoolService-3] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-27 with status: Pass and scenario: Login with either UserName and Password
-18372 [TestNG-PoolService-4] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-27 with status: Pass and scenario: Login with either UserName and Password
-18372 [TestNG-PoolService-5] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-27 with status: Pass and scenario: Login with either UserName and Password
-18615 [TestNG-PoolService-4] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
-18629 [TestNG-PoolService-5] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
-20201 [TestNG-PoolService-3] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
-20829 [TestNG-PoolService-2] INFO  com.infy.utility.APIUtility - Response Code: 204
-20829 [TestNG-PoolService-2] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-26 with status: Pass and scenario: Login with invalid UserName and Password
-20983 [TestNG-PoolService-2] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
-23084 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Response Code: 204
-23084 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-25 with status: Fail and scenario: Login Successful
-23288 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
+1054 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - browserFromTestNG: firefox
+1735 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver has been set up successfully.
+1741 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxOptions set: Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [--start-maximized], prefs: {signon.autofillForms: false, signon.autofillForms.http: false, signon.rememberSignons: false}}}
+4210 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver instance created successfully.
+4210 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: FIREFOX
+4234 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+6216 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+7984 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Francisco_Hartmann.json
+8750 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+8855 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+10094 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Response Code: 204
+10094 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-24 with status: Pass and scenario: User registers with random data
+10696 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser FIREFOX has been quit
+1069 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - browserFromTestNG: chrome
+1720 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
+1723 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+2560 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
+2560 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
+2583 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+5265 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+7653 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Gregorio_Jaskolski.json
+8492 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+8775 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+11624 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Response Code: 204
+11624 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-24 with status: Pass and scenario: User registers with random data
+11931 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
+1052 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - browserFromTestNG: chrome
+1342 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
+1345 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: [], prefs: {autofill.address_enabled: false, autofill.profile_enabled: false, credentials_enable_service: false, profile.password_manager_enabled: false}}}
+2179 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
+2179 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
+2204 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+4587 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+7131 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Ashley_Littel.json
+7710 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+7982 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+10744 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Response Code: 204
+10744 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-24 with status: Pass and scenario: User registers with random data
+11014 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
+1043 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - browserFromTestNG: firefox
+1347 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver has been set up successfully.
+1353 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxOptions set: Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [--start-maximized], prefs: {signon.autofillForms: false, signon.autofillForms.http: false, signon.rememberSignons: false}}}
+3874 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - Firefox browser window maximized.
+3874 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver instance created successfully.
+3874 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: FIREFOX
+3915 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+6051 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+8104 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Abraham_Stracke.json
+8922 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+9077 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+11870 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Response Code: 204
+11870 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-24 with status: Pass and scenario: User registers with random data
+12543 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser FIREFOX has been quit
+1122 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - browserFromTestNG: firefox
+1433 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver has been set up successfully.
+1438 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxOptions set: Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [--start-maximized], prefs: {browser.formfill.enable: false, extensions.formautofill.addresses.enabled: false, signon.rememberSignons: false}}}
+3971 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - Firefox browser window maximized.
+3971 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver instance created successfully.
+3971 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: FIREFOX
+4003 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+6334 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+8553 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Alishia_Weissnat.json
+9459 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+9638 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+12403 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Response Code: 204
+12403 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-24 with status: Pass and scenario: User registers with random data
+13153 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser FIREFOX has been quit
+1023 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - browserFromTestNG: firefox
+1320 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver has been set up successfully.
+1326 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxOptions set: Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [--start-maximized], prefs: {browser.formfill.enable: false, extensions.formautofill.addresses.capture.enabled: false, extensions.formautofill.addresses.enabled: false, signon.autofillForms: false, signon.rememberSignons: false}}}
+3946 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - Firefox browser window maximized.
+3946 [TestNG-PoolService-1] INFO  c.i.d.FirefoxDriverCreator - FirefoxDriver instance created successfully.
+3946 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: FIREFOX
+3991 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+6448 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+7977 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Qiana_Towne.json
+8575 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+8745 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+11633 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Response Code: 204
+11633 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-24 with status: Pass and scenario: User registers with random data
+12363 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser FIREFOX has been quit
+1073 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - browserFromTestNG: edge
+8653 [TestNG-PoolService-1] INFO  c.i.driverFactory.EdgeDriverCreator - EdgeDriver has been set up successfully.
+9696 [TestNG-PoolService-1] INFO  c.i.driverFactory.EdgeDriverCreator - EdgeDriver instance created successfully.
+9696 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: EDGE
+9723 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Initialized RegistrationSteps with WebDriver instance
+12036 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Navigated to registration page: https://parabank.parasoft.com/parabank
+14971 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - User registration data saved to JSON file: target/registration_data_Josh_Zboncak.json
+15792 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Submitted the registration form
+16086 [TestNG-PoolService-1] INFO  c.i.s.RegistrationStepsFaker - Confirmed that the registration success message is displayed.
+19052 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Response Code: 204
+19052 [TestNG-PoolService-1] INFO  com.infy.utility.APIUtility - Successfully updated JIRA issue: AUT-24 with status: Pass and scenario: User registers with random data
+20649 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser EDGE has been quit
+1064 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - browserFromTestNG: chrome
+1367 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
+1370 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: [], prefs: {autofill.address_enabled: false, autofill.profile_enabled: false, credentials_enable_service: false, profile.password_manager_enabled: false}}}
+2265 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
+2265 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
+2283 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Navigating to login page
+4874 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Entering valid credentials: username=capstone, password=testing123
+5170 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Clicking login button
+7219 [TestNG-PoolService-1] INFO  c.i.s.AccountOverviewStep - Verifying if the Account Overview page is displayed: true
+7481 [TestNG-PoolService-1] INFO  c.i.s.DepositFundAPISteps - Fetching account data from the web table.
+7544 [TestNG-PoolService-1] INFO  c.i.s.DepositFundAPISteps - Data fetched from web table: 2 rows.
+12499 [TestNG-PoolService-1] INFO  c.i.s.DepositFundAPISteps - Customer ID fetched: 13433
+12705 [TestNG-PoolService-1] INFO  c.i.s.DepositFundAPISteps - Depositing $10000.00 for account: 14565
+14569 [TestNG-PoolService-1] INFO  c.i.s.OpenNewAccountStep - Navigating to Account Overview
+14839 [TestNG-PoolService-1] INFO  c.i.s.DepositFundAPISteps - Fetching account data from the web table.
+14954 [TestNG-PoolService-1] INFO  c.i.s.DepositFundAPISteps - Deposit verification result: true
+14955 [TestNG-PoolService-1] INFO  c.i.s.DepositFundAPISteps - Deposit amount added successfully for account: 14565
+15188 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Logging out after successful login
+16825 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit

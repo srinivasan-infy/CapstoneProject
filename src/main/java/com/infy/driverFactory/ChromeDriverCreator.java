@@ -1,5 +1,7 @@
 package com.infy.driverFactory;
 
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -33,6 +35,12 @@ public class ChromeDriverCreator {
             }
             options.addArguments("--start-maximized");
             options.addArguments("disable-features=PasswordManager");
+            options.setExperimentalOption("prefs", Map.of(
+                    "credentials_enable_service", false,
+                    "profile.password_manager_enabled", false,
+                    "autofill.profile_enabled", false,                   
+                    "autofill.address_enabled", false 
+                ));
 
             logger.info("ChromeOptions set: {}", options);
 

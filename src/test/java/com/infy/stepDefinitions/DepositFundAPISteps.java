@@ -18,24 +18,19 @@ public class DepositFundAPISteps{
     private AccountOverview accountOverview;
     private TestContext testContext;
     public String accountID, custID;
-	private final String baseUrl;
     public String[] balanceData, afterDepositBalanceData;
     private static final String ACCOUNT_API_PATH = "/services/bank/accounts/";
     private static final String CUSTOMER_ID_KEY = "customerId";
-
-    public DepositFundAPISteps() {
+    private final String baseUrl= ConfigLoaderUtility.getProperty("baseURL").orElse("https://parabank.parasoft.com/parabank");
+    
+ /*   public DepositFundAPISteps() {
         this.driver = DriverManager.getInstance().getDriver();
-     // Retrieve the base URL, providing a default if not found
-        baseUrl = ConfigLoaderUtility.getProperty("baseURL").orElse("https://parabank.parasoft.com/parabank"); 
-        initializeObjects();
-        
-    } 
+        initializeObjects();   
+    } */ 
 
     public DepositFundAPISteps(TestContext context) {
         this.testContext = context;
         this.driver = DriverManager.getInstance().getDriver();
-     // Retrieve the base URL, providing a default if not found
-        baseUrl = ConfigLoaderUtility.getProperty("baseURL").orElse("https://parabank.parasoft.com/parabank"); 
         initializeObjects();
     }
 
