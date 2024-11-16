@@ -133,16 +133,25 @@ public class StepDefinitionUtility{
 		// Check if registration is successful
 		if (registrationPage.isSuccessMessageDisplayed()) {
 			String successMessage = registrationPage.verifyRegistrationSuccess();
-			userDetails.put("Status", "Success");
+			userDetails.put("ActualResults", successMessage);
 			System.out.println("Text from the success element: " + successMessage);
 			logout.clickLogoutLink();
 		} else {
 			// Handle column data if needed
 			int columnIndex = 2;
 			String columnData = registrationPage.getColumnData(columnIndex);
-			userDetails.put("Status", columnData);
+			userDetails.put("ActualResults", columnData);
 		}
-
+		
+		 // Compare ActualResults with ExpectedResults
+	    String expectedResults = userDetails.get("ExpectedResults");
+	    String actualResults = userDetails.get("ActualResults");
+	    if (expectedResults != null && expectedResults.equalsIgnoreCase(actualResults)) {
+	        userDetails.put("Status", "Pass");
+	    } else {
+	        userDetails.put("Status", "Fail");
+	    }	
+		
 		// Reset for next registration
 		loginPage.clickRegisterLink();
 	}
