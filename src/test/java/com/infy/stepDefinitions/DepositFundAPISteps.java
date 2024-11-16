@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
 public class DepositFundAPISteps{
-    // Logger for this class
     private static final Logger logger = LoggerFactory.getLogger(DepositFundAPISteps.class);
     private WebDriver driver;
     private AccountOverview accountOverview;
@@ -23,11 +22,6 @@ public class DepositFundAPISteps{
     private static final String CUSTOMER_ID_KEY = "customerId";
     private final String baseUrl= ConfigLoaderUtility.getProperty("baseURL").orElse("https://parabank.parasoft.com/parabank");
     
- /*   public DepositFundAPISteps() {
-        this.driver = DriverManager.getInstance().getDriver();
-        initializeObjects();   
-    } */ 
-
     public DepositFundAPISteps(TestContext context) {
         this.testContext = context;
         this.driver = DriverManager.getInstance().getDriver();

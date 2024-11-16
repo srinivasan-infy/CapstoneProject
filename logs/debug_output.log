@@ -110,3 +110,13 @@
 14955 [TestNG-PoolService-1] INFO  c.i.s.DepositFundAPISteps - Deposit amount added successfully for account: 14565
 15188 [TestNG-PoolService-1] INFO  c.infy.stepDefinitions.LoginSteps - Logging out after successful login
 16825 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
+1040 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - browserFromTestNG: chrome
+1981 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver has been set up successfully.
+1985 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeOptions set: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--start-maximized, disable-features=PasswordMa...], extensions: [], prefs: {autofill.address_enabled: false, autofill.profile_enabled: false, credentials_enable_service: false, profile.password_manager_enabled: false}}}
+2804 [TestNG-PoolService-1] INFO  c.i.d.ChromeDriverCreator - ChromeDriver instance created successfully.
+2804 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver created for browser: CHROME
+4955 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Navigated to home page: https://parabank.parasoft.com/parabank
+6370 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Verified registration page title: Expected: Signing up is easy!, Actual: Signing up is easy!
+6959 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Read user registration data from file: ./DataSheet/RegistrationData.xlsx
+26395 [TestNG-PoolService-1] INFO  c.i.s.RegistrationSteps - Updated Excel file after processing all users
+26922 [TestNG-PoolService-1] INFO  c.infy.driverFactory.DriverManager - WebDriver for browser CHROME has been quit
