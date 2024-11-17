@@ -21,6 +21,7 @@ Update in Fork repo
   Run the application:
   ```bash
   node app.js
+  ```
 
 ### 5. **Contributing Guidelines**
 - Briefly outline how users can contribute.
