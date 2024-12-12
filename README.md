@@ -21,7 +21,8 @@ _Italic text_
 
 
 [Example2](https://example.com)
-[Example2](https://example.com "Optional Title")
+
+[Example2](https://example.com "Navigate to Example.com")
 
 "# CapstoneProject" 
 Testing fork functionality
