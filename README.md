@@ -27,7 +27,7 @@ _Italic text_
 [Example2](https://example.com "Navigate to Example.com")
 
 
-~~This is strikethrough text~~
+<div style="color: red;">This text is red!</div>
 
 
 
