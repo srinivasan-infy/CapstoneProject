@@ -27,10 +27,7 @@ _Italic text_
 [Example2](https://example.com "Navigate to Example.com")
 
 
-| Header 1 | Header 2 | Header 3           |
-|----------|----------|--------------------|
-| Row 1    | Data     | Data               |
-| Row 2    | Data     | Data               |
+~~This is strikethrough text~~
 
 
 
