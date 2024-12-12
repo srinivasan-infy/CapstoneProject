@@ -7,8 +7,6 @@
 [^3]: This is the third footnote content.
 
 
-
-
 **Bold Text**
 __Bold Text with Underscroe__
 _Italic text_
