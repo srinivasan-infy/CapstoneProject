@@ -6,7 +6,7 @@
 __ Bold Text with Underscroe __
 _ Italic text _
 
-*** Bold and Italic Text **
+*** Bold and Italic Text ***
 
 
 
