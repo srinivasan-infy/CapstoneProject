@@ -20,6 +20,9 @@ _Italic text_
 3. Order List 3
 
 
+[Example2](https://example.com)
+[Example2](https://example.com "Optional Title")
+
 "# CapstoneProject" 
 Testing fork functionality
 Update in Fork repo
