@@ -5,6 +5,10 @@ _Italic text_
 
 ***Bold and Italic Text***
 ## Header 2
+- [ ] Task 1
+- [x] Task 2
+
+
 ### Header 3
 
 This is an example of a footnote reference[^a]. You can add multiple references[^b].
