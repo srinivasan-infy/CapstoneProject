@@ -1,3 +1,16 @@
+# Header 1
+## Header 2
+### Header 3
+
+** Bold Text **
+__ Bold Text with Underscroe __
+_ Italic text _
+
+*** Bold and Italic Text **
+
+
+
+
 "# CapstoneProject" 
 Testing fork functionality
 Update in Fork repo
