@@ -7,10 +7,10 @@ _Italic text_
 ## Header 2
 ### Header 3
 
-This is an example of a footnote reference[^1]. You can add multiple references[^2].
+This is an example of a footnote reference[^one]. You can add multiple references[^two].
 
-[^1]: This is the first footnote. Footnotes are a great way to provide additional context without cluttering the main text.
-[^2]: This is the second footnote. You can include links, formatting, or additional explanations.
+[^one]: This is the first footnote. Footnotes are a great way to provide additional context without cluttering the main text.
+[^two]: This is the second footnote. You can include links, formatting, or additional explanations.
 
 
 # Unordered List
