@@ -49,11 +49,11 @@ Update in Fork repo
   node app.js
   ```
 
-### 5. **Contributing Guidelines**
+## 5. **Contributing Guidelines**
 - Briefly outline how users can contribute.
 - Link to the `CONTRIBUTING.md` file if it exists.
 
-### 6. **License**
+## 6. **License**
 - Specify the licensing terms under which the project is available.
 - Include a link to the `LICENSE` file.
 
