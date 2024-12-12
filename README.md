@@ -1,4 +1,9 @@
 # Header 1
+**Bold Text**
+__Bold Text with Underscroe__
+_Italic text_
+
+***Bold and Italic Text***
 ## Header 2
 ### Header 3
 
@@ -6,12 +11,6 @@
 [^2]: This is the second footnote content.
 [^3]: This is the third footnote content.
 
-
-**Bold Text**
-__Bold Text with Underscroe__
-_Italic text_
-
-***Bold and Italic Text***
 
 # Unordered List
 + Item 1
