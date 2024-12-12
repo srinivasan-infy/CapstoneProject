@@ -2,11 +2,11 @@
 ## Header 2
 ### Header 3
 
-** Bold Text **
-__ Bold Text with Underscroe __
-_ Italic text _
+**Bold Text**
+__Bold Text with Underscroe__
+_Italic text_
 
-*** Bold and Italic Text ***
+***Bold and Italic Text***
 
 
 
