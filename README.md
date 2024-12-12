@@ -16,7 +16,7 @@ _Italic text_
 # Ordered List  
 1. Order List 1
 2. Order List 2
-   2.1 Order List 3    
+   1. Sub Order List 3    
 
 
 "# CapstoneProject" 
