@@ -8,7 +8,15 @@ _Italic text_
 
 ***Bold and Italic Text***
 
-
+# Unordered List
+- Item 1
+* Item 2
+   + Item 3
+ 
+# Ordered List  
+1. Order List 1
+2. Order List 2
+   2.1 Order List 3    
 
 
 "# CapstoneProject" 
