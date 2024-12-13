@@ -16,4 +16,4 @@ Scenario Outline: Deposit Fund API verification
 	
     Examples:
       | username     					| password     	  	|	landingpage					|
-      | capstone   						| testing123   			|	Accounts Overview		|
+      | testing						| testing123   			|	Accounts Overview		|
