@@ -1,5 +1,6 @@
 # Open New Account.feature
-Feature: Account Overview Page verification
+Feature: Account Overview Page verification test
+
 
 @Regression
 Scenario Outline: Account Overview Page verification
